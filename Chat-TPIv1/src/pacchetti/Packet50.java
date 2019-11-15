@@ -5,21 +5,16 @@
  */
 package pacchetti;
 
-import java.net.*;
-import java.io.*;
-
 /**
  *
- * @author david
+ * @author 17726
  */
-public class Packet05 {
+public class Packet50 {
 
     private byte[] id;
-    private String message;
 
-    public Packet05(byte[] id, String message) {
+    public Packet50(byte[] id) {
         this.id = id;
-        this.message = message;
     }
 
     public byte[] getId() {
@@ -30,26 +25,13 @@ public class Packet05 {
         this.id = id;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
     public byte[] createP() {           //metodo creazione pacchetto
-        byte[] packet = new byte[2048]; 
+        byte[] packet = new byte[2048];
         int i = 0;
-        packet[i++] = 05;               //opcode
+        packet[i++] = 50;               //opcode
         for (byte b : this.id) {        //id
             packet[i++] = b;
         }
-        for (byte b : this.message.getBytes()) {
-            packet[i++] = b;            //message
-        }
-        packet[i++] = 0;                //1 byte
-
         return packet;
     }
 }
