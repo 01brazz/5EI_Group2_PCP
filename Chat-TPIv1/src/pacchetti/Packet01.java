@@ -7,12 +7,14 @@ package pacchetti;
 
 import java.net.*;
 import java.io.*;
+
 /**
  *
  * @author Andrea
  */
 public class Packet01 {
-    private byte[]  id;
+
+    private byte[] id;
     private String Alias;
     private String Message;
 
@@ -45,39 +47,30 @@ public class Packet01 {
     public void setMessage(String Message) {
         this.Message = Message;
     }
-    
-    
+
     //metodo per creare pacchetto
-    public byte[] createP(){
-        byte[] UserToUser =new byte[2048];
-        
-        int i =0;
-        UserToUser[i++]=01;
-        
-        for (byte b: this.id){
-            UserToUser[i++]=b;
+    public byte[] createP() {
+        byte[] UserToUser = new byte[2048];
+
+        int i = 0;
+        UserToUser[i++] = 01;
+
+        for (byte b : this.id) {
+            UserToUser[i++] = b;
         }
-        
-        for (byte b: this.Alias.getBytes()){
-            UserToUser[i++]=b;
+
+        for (byte b : this.Alias.getBytes()) {
+            UserToUser[i++] = b;
         }
-        
-        UserToUser[i++]=0;
-        
-        for (byte b: this.Message.getBytes()){
-            UserToUser[i++]=b;
+
+        UserToUser[i++] = 0;
+
+        for (byte b : this.Message.getBytes()) {
+            UserToUser[i++] = b;
         }
-        
-        UserToUser[i++]=0;
-        
+
+        UserToUser[i++] = 0;
+
         return UserToUser;
     }
-   
-    
-    
-    
-        
-    
-    
-    
 }
