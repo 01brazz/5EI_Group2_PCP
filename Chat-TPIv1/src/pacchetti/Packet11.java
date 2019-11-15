@@ -10,7 +10,8 @@ package pacchetti;
  * @author david
  */
 public class Packet11 {
-    private byte[]  id;
+
+    private byte[] id;
 
     public Packet11(byte[] id) {
         this.id = id;
@@ -23,23 +24,17 @@ public class Packet11 {
     public void setId(byte[] id) {
         this.id = id;
     }
-    
-    
-   
-    
+
     //metodo per creare pacchetto
-    public byte[] createP(){
-        byte[] UserToUser =new byte[2048];
-        
-        int i =0;
-        UserToUser[i++]=11;
-        
-        for (byte b: this.id){
-            UserToUser[i++]=b;
+    public byte[] createP() {
+        byte[] UserToUser = new byte[2048];
+
+        int i = 0;
+        UserToUser[i++] = 11;
+
+        for (byte b : this.id) {
+            UserToUser[i++] = b;
         }
-     
-        
         return UserToUser;
     }
-    
 }
