@@ -9,13 +9,13 @@ package pacchetti;
  *
  * @author Bachir Karim
  */
-public class Pacchetto18 {
+public class Packet18 {
 
     private byte[] id;
     private String old_Alias;
     private String new_Alias;
 
-    public Pacchetto18(byte[] id,
+    public Packet18(byte[] id,
             String old_Alias,
             String new_Alias) {
         this.id = id;
