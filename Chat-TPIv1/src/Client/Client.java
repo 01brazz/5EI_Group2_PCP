@@ -20,7 +20,7 @@ public class Client {
 
     public Client() {
     }
-<<<<<<< HEAD
+
 
     public byte[] login(String Alias, String Topic) {
 
@@ -30,15 +30,7 @@ public class Client {
 
         return PacchettoByte;
     }
-=======
-    
-    public byte[] login( String Alias,String Topic){
-        
-        Packet10 p = new Packet10(Alias,Topic);
-        byte[] PacchettoLogin = p.createP();
-    
-        return PacchettoLogin;
-    };
+
     
     public byte[] userToUser(byte[] id,String Alias,String Messagge){
         
@@ -86,5 +78,5 @@ public class Client {
     
     
     
->>>>>>> 21875c7719637149a82898b2d32d8d4e76333d95
+
 }
