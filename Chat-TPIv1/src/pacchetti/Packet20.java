@@ -37,7 +37,7 @@ public class Packet20 {
     public byte[] interpretaP {
         byte[] aliasC = new byte[100];
         for (byte b : this.pacchetto){
-            //metti in aliasC tutto ranne i primi 3 byte e l'ultimo
+            //metti in aliasC tutto tranne i primi 3 byte e l'ultimo
         }
     }
 }
