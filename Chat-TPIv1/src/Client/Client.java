@@ -15,14 +15,13 @@ public class Client {
 
     public Client() {
     }
-    
-    public byte[] login( String Alias,String Topic){
-        
-        Packet10 p = new Packet10(Alias,Topic);
+
+    public byte[] login(String Alias, String Topic) {
+
+        // crea un pacchetto di richiesta login e lo restituisce in output
+        Packet10 p = new Packet10(Alias, Topic);
         byte[] PacchettoByte = p.createP();
-    
+
         return PacchettoByte;
-    };
-    
-    
+    }
 }

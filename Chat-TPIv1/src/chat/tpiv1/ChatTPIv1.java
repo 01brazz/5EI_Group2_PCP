@@ -5,10 +5,12 @@
  */
 package chat.tpiv1;
 
+import Client.Client;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,22 +23,28 @@ public class ChatTPIv1 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        
-        //login beltra
-        
-        try {
-            
-            Socket socket = new Socket("127.0.0.1", 53101);
+    public static void main(String[] args) throws IOException {
 
-            DataInputStream is = new DataInputStream(socket.getInputStream());
-            String ris = is.readUTF();
-            System.out.println("Messaggio ricevuto: " + ris);
+        Socket socket = new Socket("127.0.0.1", 53101);
+        System.out.println("Client connesso");
 
-        } catch (IOException ex) {
-            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        DataOutputStream os = new DataOutputStream(socket.getOutputStream());
+
+        Client client = new Client();
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Iserisci alias");
+        String alias = sc.nextLine();
+
+        System.out.println("Iserisci topic");
+        String topic = sc.nextLine();
+
+        byte[] login = client.login(alias, topic);
+
+        os.write(login);
+
+        System.out.println("Utente connesso!");
+
     }
-    
 }
