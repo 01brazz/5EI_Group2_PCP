@@ -5,11 +5,24 @@
  */
 package Client;
 
+import pacchetti.Packet10;
+
 /**
  *
  * @author 5ei
  */
 public class Client {
-    // alias, topic
-    // metodo login -> crea pacchetto con parametri
+
+    public Client() {
+    }
+    
+    public byte[] login( String Alias,String Topic){
+        
+        Packet10 p = new Packet10(Alias,Topic);
+        byte[] PacchettoByte = p.createP();
+    
+        return PacchettoByte;
+    };
+    
+    
 }
