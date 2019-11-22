@@ -6,6 +6,7 @@
 package Client;
 
 import pacchetti.Packet10;
+import pacchetti.Packet11;
 
 /**
  *
@@ -19,10 +20,20 @@ public class Client {
     public byte[] login( String Alias,String Topic){
         
         Packet10 p = new Packet10(Alias,Topic);
-        byte[] PacchettoByte = p.createP();
+        byte[] PacchettoLogin = p.createP();
     
-        return PacchettoByte;
+        return PacchettoLogin;
     };
+    
+    public byte[] disconnection(byte[] id){
+        
+        Packet11 p = new Packet11(id);
+        byte[] PacchettoDisconnection = p.createP();
+    
+        return PacchettoDisconnection;
+    };
+    
+    
     
     
 }
