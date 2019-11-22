@@ -5,9 +5,6 @@
  */
 package pacchetti;
 
-import java.net.*;
-import java.io.*;
-
 /**
  *
  * @author Degio & Bruse

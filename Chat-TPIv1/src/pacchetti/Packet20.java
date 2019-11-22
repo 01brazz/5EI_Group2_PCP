@@ -5,6 +5,9 @@
  */
 package pacchetti;
 
+import java.util.*;
+
+
 /**
  *
  * @author 17726
@@ -34,10 +37,26 @@ public class Packet20 {
         this.alias = alias;
     }
     
-    public byte[] interpretaP {
-        byte[] aliasC = new byte[100];
-        for (byte b : this.pacchetto){
-            //metti in aliasC tutto ranne i primi 3 byte e l'ultimo
+    public byte[] interpretaP(){
+    
+    int i = 0;
+    byte[] AliasC = new byte[2048];
+    AliasC[i++] = 0;
+    for (byte b : AliasC){
+        while (i<=2){
+            AliasC.remove(b);
+            i += 1;
+        }
+        AliasC[i++] = b;
+    }
+    AliasC.remove(AliasC.lenght()-1);
+    return AliasC;
+    }
+    public void confrontaAlias(byte[] AliasC){
+        if (AliasC.getString() == this.alias){
+            System.out.println("stonks");
+        }else {
+            System.out.println("not stonks");
         }
     }
 }
