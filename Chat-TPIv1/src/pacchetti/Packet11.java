@@ -5,6 +5,8 @@
  */
 package pacchetti;
 
+import java.util.Arrays;
+
 /**
  *
  * @author david
@@ -36,5 +38,11 @@ public class Packet11 {
             UserToUser[i++] = b;
         }
         return UserToUser;
+    }
+    
+    public byte[] interpretaP(byte[] pacchetto){
+    byte[] aliasC = Arrays.copyOfRange(pacchetto, 1, pacchetto.length);
+   
+    return aliasC;
     }
 }
