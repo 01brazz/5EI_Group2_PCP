@@ -10,9 +10,12 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import repository.Repository;
 
 /**
  *
@@ -36,9 +39,16 @@ public class ChatTPIv1 {
 
         System.out.println("Iserisci alias");
         String alias = sc.nextLine();
-
         System.out.println("Iserisci topic");
         String topic = sc.nextLine();
+
+        Map<String, Object> credentials = new HashMap<String, Object>() {
+            {
+                // costruttore della classe, non dell'istanza
+                put("alias", alias);
+                put("topic", topic);
+            }
+        };
 
         byte[] login = client.login(alias, topic);
 

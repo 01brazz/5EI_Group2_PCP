@@ -39,10 +39,10 @@ public class Packet11 {
         }
         return UserToUser;
     }
-    
-    public byte[] interpretaP(byte[] pacchetto){
-    byte[] aliasC = Arrays.copyOfRange(pacchetto, 1, pacchetto.length);
-   
-    return aliasC;
+
+    public byte[] interpretaP(byte[] pacchetto) {
+        byte[] aliasC = Arrays.copyOfRange(pacchetto, 1, pacchetto.length);
+
+        return aliasC;
     }
 }
