@@ -37,33 +37,8 @@ public class Packet20 {
         this.alias = alias;
     }
     
-<<<<<<< HEAD
-    public byte[] interpretaP(){
-    
-    int i = 0;
-    byte[] AliasC = new byte[2048];
-    AliasC[i++] = 0;
-    for (byte b : AliasC){
-        while (i<=2){
-            AliasC.remove(b);
-            i += 1;
-        }
-        AliasC[i++] = b;
-    }
-    AliasC.remove(AliasC.lenght()-1);
-    return AliasC;
-    }
-    public void confrontaAlias(byte[] AliasC){
-        if (AliasC.getString() == this.alias){
-            System.out.println("stonks");
-        }else {
-            System.out.println("not stonks");
-=======
-    public byte[] interpretaP {
-        byte[] aliasC = new byte[100];
-        for (byte b : this.pacchetto){
-            //metti in aliasC tutto tranne i primi 3 byte e l'ultimo
->>>>>>> b58dcb0b50eba34da3cb6a246199b05cd3b7bc80
+    public byte[] interpretaP() {
+        byte[] aliasC = Arrays.copyOfRange(pacchetto,3,pacchetto.length-1);
+        return aliasC;  
         }
     }
-}
