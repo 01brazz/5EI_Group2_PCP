@@ -1,8 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+* REGISTRATION ACK
+*inviato dopo che un utente ha richiesto una connessione. 
+* Assegna un ID all'utente e invia nuovamente l'alias per confermare la correttezza.
+*/
 package pacchetti;
 
 import java.util.*;

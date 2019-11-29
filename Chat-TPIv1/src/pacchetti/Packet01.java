@@ -1,7 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+*  USER TO USER
+* Una volta connesso al server, l'utente dovrà conoscere il nome dell'altro utente per chattare direttamente con lui.
+* Invia inoltre l'ID univoco inviato durante l'inizializzazione della connessione.
+* Se la lunghezza del messaggio è maggiore di [2043 - lunghezza alias] significa che il messaggio è stato suddiviso tra più pacchetti. 
+* L'ultimo pacchetto viene notificato con un messaggio di lunghezza inferiore a 2043 - alias lunghezza. 
+* Se il contenuto risulta in un multiplo di questo numero, verrà inviato un pacchetto vuoto per notificare la fine della trasmissione.
  */
 package pacchetti;
 
