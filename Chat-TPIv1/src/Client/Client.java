@@ -24,7 +24,6 @@ public class Client {
 
     public byte[] login(String Alias, String Topic) {
 
-        // crea un pacchetto di richiesta login e lo restituisce in output
         Packet10 p = new Packet10(Alias, Topic);
         byte[] PacchettoByte = p.createP();
 
@@ -35,48 +34,45 @@ public class Client {
     public byte[] userToUser(byte[] id,String Alias,String Messagge){
         
         Packet01 p = new Packet01(id,Alias,Messagge);
-        byte[] PacchettoUserToUser = p.createP();
-    
-        return PacchettoUserToUser;
-    };
-    
-    public byte[] userToChat(byte[] id,String Messagge){
-        
-        Packet05 p = new Packet05(id,Messagge);
+
+        byte[] PacchettoLogin = p.createP();
+
+        return PacchettoLogin;
+    }
+
+
+    public byte[] userToChat(byte[] id, String Messagge) {
+
+        Packet05 p = new Packet05(id, Messagge);
         byte[] PacchettoUserToChat = p.createP();
-    
+
         return PacchettoUserToChat;
-    };
-    
-    public byte[] disconnection(byte[] id){
-        
+    }
+
+    public byte[] disconnection(byte[] id) {
+
         Packet11 p = new Packet11(id);
         byte[] PacchettoDisconnection = p.createP();
-    
+
         return PacchettoDisconnection;
-    };
-    
-    public byte[] userListRequest(byte[] id){
-        
+    }
+
+    public byte[] userListRequest(byte[] id) {
+
         Packet50 p = new Packet50(id);
         byte[] PacchettoUserListRequest = p.createP();
-    
-        return PacchettoUserListRequest;
-    };
-    
-    public byte[] changeAlias(byte[] id, String old_Alias, String new_Alias){
-        
-        Packet18 p = new Packet18(id,old_Alias,new_Alias);
-        byte[] PacchettoChangeAlias = p.createP();
-    
-        return PacchettoChangeAlias;
-    };
-    
-    
-    
-    
-    
-    
-    
 
+        return PacchettoUserListRequest;
+    }
+
+    public byte[] changeAlias(byte[] id, String old_Alias, String new_Alias) {
+
+        Packet18 p = new Packet18(id, old_Alias, new_Alias);
+        byte[] PacchettoChangeAlias = p.createP();
+
+        return PacchettoChangeAlias;
+
+    };
+    
 }
+
