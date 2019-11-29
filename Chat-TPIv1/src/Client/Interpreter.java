@@ -9,6 +9,9 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import repository.Repository;
+import pacchetti.Packet20;
+import pacchetti.Packet11;
 
 /**
  *
@@ -28,7 +31,17 @@ public class Interpreter extends Thread {
         System.arraycopy(this.packet, 0, opcode, 0, 1);
         
         switch(opcode){
-            case 
+            case (20):
+                Packet20 p = new Packet20(packet, Repository.getAlias());
+                p.interpretaP(packet);
+                
+            case (11):
+                Packet11 a = new Packet11(packet);
+                a.interpretaP(packet);
+                
+                
+                
+                
         }
         
     }

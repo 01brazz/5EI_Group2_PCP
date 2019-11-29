@@ -40,9 +40,24 @@ public class Packet11 {
         return UserToUser;
     }
     
-    public byte[] interpretaP(byte[] pacchetto){
-    byte[] aliasC = Arrays.copyOfRange(pacchetto, 1, pacchetto.length);
-   
-    return aliasC;
+    public String interpretaP(byte[] pacchetto){
+        byte[] reasonByte = Arrays.copyOfRange(pacchetto, 1, pacchetto.length);
+        
+        String reason;
+        
+        
+        
+        
+        switch (reasonByte){
+            case (0):
+                reason = ("no reason");
+            case (1):
+                reason = ("timeaout");
+            case (2):
+                reason = ("server gone offline");    
+        }
+        
+    
+    return reason ;
     }
 }
