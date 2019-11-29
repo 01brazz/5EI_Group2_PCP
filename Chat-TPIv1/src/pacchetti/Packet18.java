@@ -7,7 +7,7 @@ package pacchetti;
 
 /**
  *
- * @author Bachir Karim
+ * @author Degio
  */
 public class Packet18 {
 
