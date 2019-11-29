@@ -41,4 +41,4 @@ public class Packet20 {
         byte[] aliasC = Arrays.copyOfRange(pacchetto,3,pacchetto.length-1);
         return aliasC;  
         }
-    }
+}
