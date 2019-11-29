@@ -1,8 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+* REGISTRATION PACKET
+* Il primo pacchetto inviato dal client al superclient-server locale è un pacchetto di registrazione. 
+* Questo pacchetto indica al server l'alias dell'utente (soprannome), utilizzato per identificare in modo univoco un utente in un dominio e l'argomento facoltativo a cui connettersi.
+* Se non viene passato alcun argomento, il server assumerà una connessione solo per le conversazioni private.
+* L'argomento predefinito da connettere all'aula generale è "generale", altri argomenti generano un errore in questa versione del protocollo
+*/
+
 package pacchetti;
 
 /**

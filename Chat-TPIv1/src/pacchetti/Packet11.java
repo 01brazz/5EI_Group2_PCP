@@ -1,8 +1,17 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+* DISCONNECTION
+* La disconnessione può avvenire sia dal client che dal server.
+* CLIENT
+* Inviato quando il client desidera disconnettersi dal server.
+*
+* SERVER
+* inviato dal server con i seguenti codici operativi possibili:
+*
+* 0 nessun motivo
+* 1 timeout
+* Questo pacchetto viene inviato dopo 15 minuti di inattività del client.
+* 2 server offline
+*/
 package pacchetti;
 
 import java.util.Arrays;
@@ -39,6 +48,7 @@ public class Packet11 {
         }
         return UserToUser;
     }
+<<<<<<< HEAD
     
     public String interpretaP(byte[] pacchetto){
         byte[] reasonByte = Arrays.copyOfRange(pacchetto, 1, pacchetto.length);
@@ -59,5 +69,12 @@ public class Packet11 {
         
     
     return reason ;
+=======
+
+    public byte[] interpretaP(byte[] pacchetto) {
+        byte[] aliasC = Arrays.copyOfRange(pacchetto, 1, pacchetto.length);
+
+        return aliasC;
+>>>>>>> de322ada2d5ec05310660dc4bc00ebe0adf2f018
     }
 }

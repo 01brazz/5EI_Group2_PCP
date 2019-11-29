@@ -1,18 +1,18 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+* REGISTRATION ACK
+*inviato dopo che un utente ha richiesto una connessione. 
+* Assegna un ID all'utente e invia nuovamente l'alias per confermare la correttezza.
+*/
 package pacchetti;
 
 import java.util.*;
-
 
 /**
  *
  * @author 17726
  */
 public class Packet20 {
+
     private byte[] pacchetto;
     private String alias;
 
@@ -36,18 +36,25 @@ public class Packet20 {
     public void setAlias(String alias) {
         this.alias = alias;
     }
+<<<<<<< HEAD
 
-    public byte[] interpretaP(byte[] pacchetto){
-    byte[] aliasC = Arrays.copyOfRange(pacchetto, 3, pacchetto.length-1);
-   
-    return aliasC;
+    public byte[] interpretaP(byte[] pacchetto) {
+        byte[] aliasC = Arrays.copyOfRange(pacchetto, 3, pacchetto.length - 1);
+
+        return aliasC;
     }
-    public void confrontaAlias(byte[] AliasC){
-        if (AliasC == this.alias.getBytes()){
+
+    public void confrontaAlias(byte[] AliasC) {
+        if (AliasC == this.alias.getBytes()) {
             System.out.println("stonks");
-        }else {
+        } else {
             System.out.println("not stonks");
-  
+
+=======
+    
+    public byte[] interpretaP() {
+        byte[] aliasC = Arrays.copyOfRange(pacchetto,3,pacchetto.length-1);
+        return aliasC;  
+>>>>>>> 5d8860d8007ec5790fafb1b704214db8bac96db0
         }
-    }
 }
