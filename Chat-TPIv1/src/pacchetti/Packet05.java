@@ -6,6 +6,9 @@
 */
 package pacchetti;
 
+import java.util.Arrays;
+import java.util.Base64;
+
 
 /**
  *
@@ -50,5 +53,16 @@ public class Packet05 {
         packet[i++] = 0;                //1 byte
 
         return packet;
+    }
+    
+    public String interpretaP(byte[] pacchetto){
+         byte[] sourceAliasByte = Arrays.copyOfRange(pacchetto,1,2 );
+         byte[] messageByte = Arrays.copyOfRange(pacchetto, 3, pacchetto.length-1);
+         
+         String sourceAlias = Base64.getEncoder().encodeToString(sourceAliasByte);
+         String message = Base64.getEncoder().encodeToString(messageByte);
+         
+         
+        return ( sourceAlias + ":" + message);
     }
 }
