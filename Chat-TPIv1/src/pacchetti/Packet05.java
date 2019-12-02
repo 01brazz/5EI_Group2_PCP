@@ -57,7 +57,7 @@ public class Packet05 {
     
     public String interpretaP(byte[] pacchetto){
          byte[] sourceAliasByte = Arrays.copyOfRange(pacchetto,1,2 );
-         byte[] messageByte = Arrays.copyOfRange(pacchetto, 3, pacchetto.length-1);
+         byte[] messageByte = Arrays.copyOfRange(pacchetto, 4, pacchetto.length-1);
          
          String sourceAlias = Base64.getEncoder().encodeToString(sourceAliasByte);
          String message = Base64.getEncoder().encodeToString(messageByte);
