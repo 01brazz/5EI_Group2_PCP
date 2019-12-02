@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 import repository.Repository;
 import pacchetti.Packet20;
 import pacchetti.Packet11;
+import pacchetti.Packet05;
 
 /**
  *
@@ -38,6 +39,10 @@ public class Interpreter extends Thread {
             case (11):
                 Packet11 a = new Packet11(packet);
                 a.interpretaP(packet);
+             
+            case (05):
+                Packet05 u = new Packet05(packet,"");
+                u.interpretaP(packet);
                 
                 
                 
