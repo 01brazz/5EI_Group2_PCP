@@ -48,33 +48,33 @@ public class Packet11 {
         }
         return UserToUser;
     }
-<<<<<<< HEAD
     
     public String interpretaP(byte[] pacchetto){
-        byte[] reasonByte = Arrays.copyOfRange(pacchetto, 1, pacchetto.length);
         
-        String reason;
-        
+        String reason = new String();
         
         
         
-        switch (reasonByte){
+        
+        switch (pacchetto[1]){
             case (0):
                 reason = ("no reason");
             case (1):
                 reason = ("timeaout");
             case (2):
                 reason = ("server gone offline");    
+        
         }
         
+        return reason ;
+        
     
-    return reason ;
-=======
-
-    public byte[] interpretaP(byte[] pacchetto) {
-        byte[] aliasC = Arrays.copyOfRange(pacchetto, 1, pacchetto.length);
-
-        return aliasC;
->>>>>>> de322ada2d5ec05310660dc4bc00ebe0adf2f018
+    
     }
+
+    //public byte[] interpretaP(byte[] pacchetto) {
+    //    byte[] aliasC = Arrays.copyOfRange(pacchetto, 1, pacchetto.length);
+
+       // return aliasC;
+    //}
 }

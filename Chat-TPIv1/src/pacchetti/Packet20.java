@@ -36,7 +36,7 @@ public class Packet20 {
     public void setAlias(String alias) {
         this.alias = alias;
     }
-<<<<<<< HEAD
+
 
     public byte[] interpretaP(byte[] pacchetto) {
         byte[] aliasC = Arrays.copyOfRange(pacchetto, 3, pacchetto.length - 1);
@@ -50,11 +50,7 @@ public class Packet20 {
         } else {
             System.out.println("not stonks");
 
-=======
-    
-    public byte[] interpretaP() {
-        byte[] aliasC = Arrays.copyOfRange(pacchetto,3,pacchetto.length-1);
-        return aliasC;  
->>>>>>> 5d8860d8007ec5790fafb1b704214db8bac96db0
+
         }
+    }
 }
