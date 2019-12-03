@@ -16,6 +16,9 @@
 */
 package pacchetti;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  *
  * @author Degio & Bruse
@@ -64,19 +67,17 @@ public class Packet51 {
         this.json_content = json_content;
     }
 
-    
+    public byte[] interpretaP(byte[] pacchetto) {
+        
+        byte tipo = pacchetto[1];
+        byte list_length = pacchetto[2];
+        byte[] List = Arrays.copyOfRange(pacchetto, 3, pacchetto.length - 1);
+        
+        ArrayList<String> listFinal = new ArrayList<>();
+         
 
-    public byte[] createP() {
-        byte[] packet = new byte[2024];
-        int i = -1;
-        packet[i++] = 51;
-        for (byte b : this.List_Length.getBytes()) {
-                    packet[i++] = b;
-                }
-        for (byte b : this.json_content.getBytes()) {
-                    packet[i++] = b;
-        }
-        return packet;
+        return aliasC;
     }
+
 }
 
