@@ -56,8 +56,8 @@ public class Packet01 {
     public byte[] createP() {
         byte[] UserToUser = new byte[2048];
 
-        int i = -1;
-        UserToUser[i++] = 01;
+        int i = 0;
+        UserToUser[i] = 01;
 
         for (byte b : this.id) {
             UserToUser[i++] = b;
@@ -81,7 +81,7 @@ public class Packet01 {
     public String interpretaP(byte[] pacchetto){
         byte[] sourceAliasByteOp = new byte[2048];
          
-        int i = -1;
+        int i = 0;
          
         for (byte b : pacchetto){
              

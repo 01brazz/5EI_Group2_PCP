@@ -51,8 +51,8 @@ public class Packet05 {
 
     public byte[] createP() {           //metodo creazione pacchetto
         byte[] packet = new byte[2048];
-        int i = -1;
-        packet[i++] = 05;               //opcode
+        int i = 0;
+        packet[i] = 05;               //opcode
         for (byte b : this.id) {        //id
             packet[i++] = b;
         }
@@ -66,7 +66,7 @@ public class Packet05 {
     public void interpretaP(byte[] pacchetto) {
         byte[] sourceAliasByteOp = new byte[2048];
 
-        int i = -1;
+        int i = 0;
         for (byte b : pacchetto) {
             if (b == 0) {
                 break;
