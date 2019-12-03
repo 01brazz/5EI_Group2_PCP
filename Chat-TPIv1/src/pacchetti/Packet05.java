@@ -60,7 +60,6 @@ public class Packet05 {
             packet[i++] = b;            //message
         }
         packet[i++] = 0;                //1 byte
-
         return packet;
     }
 
@@ -68,11 +67,8 @@ public class Packet05 {
         byte[] sourceAliasByteOp = new byte[2048];
 
         int i = -1;
-
         for (byte b : pacchetto) {
-
             if (b == 0) {
-
                 break;
             } else {
                 sourceAliasByteOp[i++] = b;
