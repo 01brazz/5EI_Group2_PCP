@@ -14,6 +14,7 @@ import repository.Repository;
 import pacchetti.Packet20;
 import pacchetti.Packet11;
 import pacchetti.Packet05;
+import pacchetti.Packet51;
 
 /**
  *
@@ -45,6 +46,14 @@ public class Interpreter extends Thread {
             case ("05"):
                 Packet05 u = new Packet05(packet, "");
                 u.interpretaP(packet);
+                
+            case ("01"):
+                Packet05 m = new Packet05(packet, "");
+                m.interpretaP(packet);
+                
+            case ("51"):
+                Packet51 l = new Packet51("","","");
+                l.interpretaP(packet);
         }
     }
 }
