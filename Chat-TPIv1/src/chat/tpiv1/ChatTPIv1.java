@@ -44,11 +44,12 @@ public class ChatTPIv1 {
 
         Map<String, Object> credentials = new HashMap<String, Object>() {
             {
-                // costruttore della classe, non dell'istanza
                 put("alias", alias);
                 put("topic", topic);
             }
         };
+        
+        Repository.credentials = credentials;
 
         byte[] login = client.login(alias, topic);
 

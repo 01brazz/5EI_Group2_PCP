@@ -26,7 +26,7 @@ public class Packet50 {
 
     public byte[] createP() {           //metodo creazione pacchetto
         byte[] packet = new byte[2048];
-        int i = 0;
+        int i = -1;
         packet[i++] = 50;               //opcode
         for (byte b : this.id) {        //id
             packet[i++] = b;

@@ -8,6 +8,9 @@
  */
 package pacchetti;
 
+import java.util.Arrays;
+import java.util.Base64;
+
 
 /**
  *
@@ -53,7 +56,7 @@ public class Packet01 {
     public byte[] createP() {
         byte[] UserToUser = new byte[2048];
 
-        int i = 0;
+        int i = -1;
         UserToUser[i++] = 01;
 
         for (byte b : this.id) {
@@ -73,5 +76,30 @@ public class Packet01 {
         UserToUser[i++] = 0;
 
         return UserToUser;
+    }
+    
+    public String interpretaP(byte[] pacchetto){
+        byte[] sourceAliasByteOp = new byte[2048];
+         
+        int i = -1;
+         
+        for (byte b : pacchetto){
+             
+            if (b == 0){
+                
+                break;
+            }else{
+                sourceAliasByteOp[i++] = b;
+            }      
+        }
+        
+        byte[] sourceAliasByte = Arrays.copyOfRange(sourceAliasByteOp, 1,sourceAliasByteOp.length );
+        byte[] messageByte = Arrays.copyOfRange(pacchetto, i++, pacchetto.length-1);
+         
+        String sourceAlias = Base64.getEncoder().encodeToString(sourceAliasByte);
+        String message = Base64.getEncoder().encodeToString(messageByte);
+         
+         
+        return ( sourceAlias + ":" + message);
     }
 }

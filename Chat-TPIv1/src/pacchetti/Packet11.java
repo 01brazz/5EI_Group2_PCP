@@ -13,6 +13,7 @@
  * 2 server offline
  */
 package pacchetti;
+
 import java.util.Arrays;
 
 /**
@@ -39,7 +40,7 @@ public class Packet11 {
     public byte[] createP() {
         byte[] UserToUser = new byte[2048];
 
-        int i = 0;
+        int i = -1;
         UserToUser[i++] = 11;
 
         for (byte b : this.id) {
@@ -64,6 +65,6 @@ public class Packet11 {
     }
     //public byte[] interpretaP(byte[] pacchetto) {
     //    byte[] aliasC = Arrays.copyOfRange(pacchetto, 1, pacchetto.length);
-       // return aliasC;
+    // return aliasC;
     //}
 }

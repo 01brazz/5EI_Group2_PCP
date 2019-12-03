@@ -2,7 +2,7 @@
 * REGISTRATION ACK
 *inviato dopo che un utente ha richiesto una connessione. 
 * Assegna un ID all'utente e invia nuovamente l'alias per confermare la correttezza.
-*/
+ */
 package pacchetti;
 
 import java.util.*;
@@ -37,7 +37,6 @@ public class Packet20 {
         this.alias = alias;
     }
 
-
     public byte[] interpretaP(byte[] pacchetto) {
         byte[] aliasC = Arrays.copyOfRange(pacchetto, 3, pacchetto.length - 1);
 
@@ -49,8 +48,6 @@ public class Packet20 {
             System.out.println("stonks");
         } else {
             System.out.println("not stonks");
-
-
         }
     }
 }

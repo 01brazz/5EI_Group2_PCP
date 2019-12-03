@@ -48,7 +48,7 @@ public class Packet18 {
 
     public byte[] createP() {
         byte[] packet = new byte[2048];
-        int i = 0;
+        int i = -1;
         packet[i++] = 18;
 
         for (byte b : this.id) {

@@ -41,7 +41,7 @@ public class Packet10 {
 
     public byte[] createP() {
         byte[] packet = new byte[2048];
-        int i = 0;
+        int i = -1;
         packet[i++] = 10;
         packet[i++] = 0;
         for (byte b : this.Alias.getBytes()) {
