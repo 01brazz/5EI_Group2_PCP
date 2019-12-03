@@ -40,7 +40,7 @@ public class Packet11 {
     public byte[] createP() {
         byte[] UserToUser = new byte[2048];
 
-        int i = 0;
+        int i = -1;
         UserToUser[i++] = 11;
 
         for (byte b : this.id) {

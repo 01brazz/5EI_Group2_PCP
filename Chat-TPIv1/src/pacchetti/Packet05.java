@@ -42,7 +42,7 @@ public class Packet05 {
 
     public byte[] createP() {           //metodo creazione pacchetto
         byte[] packet = new byte[2048];
-        int i = 0;
+        int i = -1;
         packet[i++] = 05;               //opcode
         for (byte b : this.id) {        //id
             packet[i++] = b;
@@ -56,11 +56,25 @@ public class Packet05 {
     }
     
     public String interpretaP(byte[] pacchetto){
-         byte[] sourceAliasByte = Arrays.copyOfRange(pacchetto,1,2 );
-         byte[] messageByte = Arrays.copyOfRange(pacchetto, 4, pacchetto.length-1);
+        byte[] sourceAliasByteOp = new byte[2048];
          
-         String sourceAlias = Base64.getEncoder().encodeToString(sourceAliasByte);
-         String message = Base64.getEncoder().encodeToString(messageByte);
+        int i = -1;
+         
+        for (byte b : pacchetto){
+             
+            if (b == 0){
+                
+                break;
+            }else{
+                sourceAliasByteOp[i++] = b;
+            }      
+        }
+        
+        byte[] sourceAliasByte = Arrays.copyOfRange(sourceAliasByteOp, 1,sourceAliasByteOp.length );
+        byte[] messageByte = Arrays.copyOfRange(pacchetto, i++, pacchetto.length-1);
+         
+        String sourceAlias = Base64.getEncoder().encodeToString(sourceAliasByte);
+        String message = Base64.getEncoder().encodeToString(messageByte);
          
          
         return ( sourceAlias + ":" + message);

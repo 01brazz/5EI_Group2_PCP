@@ -68,7 +68,7 @@ public class Packet51 {
 
     public byte[] createP() {
         byte[] packet = new byte[2024];
-        int i = 0;
+        int i = -1;
         packet[i++] = 51;
         for (byte b : this.List_Length.getBytes()) {
                     packet[i++] = b;
