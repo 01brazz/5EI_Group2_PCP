@@ -30,24 +30,19 @@ public class Interpreter extends Thread {
     public void run() {
         byte[] opcode = new byte[1];
         System.arraycopy(this.packet, 0, opcode, 0, 1);
-        
-        switch(opcode){
+
+        switch (opcode) {
             case (20):
-                Packet20 p = new Packet20(packet, Repository.getAlias());
+                Packet20 p = new Packet20(packet, (String) Repository.credentials.get("alias"));
                 p.interpretaP(packet);
-                
+
             case (11):
                 Packet11 a = new Packet11(packet);
                 a.interpretaP(packet);
-             
+
             case (05):
-                Packet05 u = new Packet05(packet,"");
+                Packet05 u = new Packet05(packet, "");
                 u.interpretaP(packet);
-                
-                
-                
-                
         }
-        
     }
 }
