@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import com.google.gson.*;
 import java.util.Base64;
+import repository.Repository;
 
 /**
  *
@@ -63,17 +64,17 @@ public class Packet51 {
         this.json_content = json_content;
     }
 
-    public ArrayList interpretaP(byte[] pacchetto) {
+    public void interpretaP(byte[] pacchetto) {
 
         byte tipo = pacchetto[1];
         byte list_length = pacchetto[2];
         byte[] List = Arrays.copyOfRange(pacchetto, 3, pacchetto.length - 1);
-
+        
         Gson gson = new Gson();
         String User = Base64.getEncoder().encodeToString(List);
 
         ArrayList list = gson.fromJson(User, ArrayList.class);
 
-        return list;
+        Repository.messages.put("",list);
     }
 }

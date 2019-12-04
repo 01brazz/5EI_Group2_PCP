@@ -10,6 +10,7 @@ package pacchetti;
 
 import java.util.Arrays;
 import java.util.Base64;
+import repository.Repository;
 
 /**
  *
@@ -77,7 +78,7 @@ public class Packet01 {
         return UserToUser;
     }
 
-    public String interpretaP(byte[] pacchetto) {
+    public void interpretaP(byte[] pacchetto) {
         byte[] sourceAliasByteOp = new byte[2048];
 
         int i = 0;
@@ -98,6 +99,6 @@ public class Packet01 {
         String sourceAlias = Base64.getEncoder().encodeToString(sourceAliasByte);
         String message = Base64.getEncoder().encodeToString(messageByte);
 
-        return (sourceAlias + ":" + message);
+        Repository.messages.put(sourceAlias, message);
     }
 }
