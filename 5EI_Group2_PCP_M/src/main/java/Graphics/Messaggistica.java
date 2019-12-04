@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package Graphics;
+import repository.Repository;
+import Client.Client;
+import java.awt.Frame;
 
 /**
  *
@@ -99,6 +102,11 @@ public class Messaggistica extends javax.swing.JFrame {
         });
 
         jButton1.setText("Invia");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jMenuBar1.setBackground(new java.awt.Color(20, 20, 20));
 
@@ -162,6 +170,14 @@ public class Messaggistica extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String text = jTextField1.getText();
+        String user = (String) Repository.aliasInvio.get("alias");
+        byte[] id = (byte[]) Repository.credentials.get("id");
+        Client.userToUser(id, user, text);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -188,12 +204,14 @@ public class Messaggistica extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Messaggistica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new Messaggistica().setVisible(true);
+                Frame frame = new Messaggistica();
+                frame.setSize(730, 530);
+                frame.setVisible(true);
             }
         });
     }

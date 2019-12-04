@@ -1,7 +1,7 @@
 /*
-* REGISTRATION ACK
-*inviato dopo che un utente ha richiesto una connessione. 
-* Assegna un ID all'utente e invia nuovamente l'alias per confermare la correttezza.
+ * REGISTRATION ACK
+ *inviato dopo che un utente ha richiesto una connessione. 
+ * Assegna un ID all'utente e invia nuovamente l'alias per confermare la correttezza.
  */
 package pacchetti;
 

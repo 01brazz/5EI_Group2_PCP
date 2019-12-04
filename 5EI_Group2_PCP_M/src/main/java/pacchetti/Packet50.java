@@ -1,7 +1,7 @@
 /*
-* GROUP USER LIST REQUESTS
-*Inviato per richiedere l'intero elenco di utenti del gruppo da un client.
-*/
+ * GROUP USER LIST REQUESTS
+ *Inviato per richiedere l'intero elenco di utenti del gruppo da un client.
+ */
 package pacchetti;
 
 /**

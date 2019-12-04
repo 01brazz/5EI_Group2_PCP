@@ -6,16 +6,12 @@
 package chat.tpiv1;
 
 import Client.Client;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.net.Socket;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import Client.Listener;
+import java.io.*;
+import java.net.*;
+import java.util.*;
 import repository.Repository;
+import Graphics.*;
 
 /**
  *
@@ -25,37 +21,23 @@ public class ChatTPIv1 {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
+        try {
+            Socket socket = new Socket("127.0.0.1", 53101);
 
-        Socket socket = new Socket("127.0.0.1", 53101);
-        System.out.println("Client connesso");
+            DataOutputStream os = new DataOutputStream(socket.getOutputStream());
 
-        DataOutputStream os = new DataOutputStream(socket.getOutputStream());
+            Client client = new Client(os);
 
-        Client client = new Client();
-
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Iserisci alias");
-        final String alias = sc.nextLine();
-        System.out.println("Iserisci topic");
-        final String topic = sc.nextLine();
-
-        Map<String, Object> credentials = new HashMap<String, Object>() {
-            {
-                put("alias", alias);
-                put("topic", topic);
-            }
-        };
-
-        Repository.credentials = credentials;
-
-        byte[] login = client.login(alias, topic);
-
-        os.write(login);
-
-        System.out.println("Utente connesso!");
-
+            Messaggistica.main(args);
+            Login.main(args);
+            
+            Listener listener = new Listener(socket);
+            listener.start();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }

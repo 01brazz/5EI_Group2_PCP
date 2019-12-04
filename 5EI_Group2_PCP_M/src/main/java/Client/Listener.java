@@ -17,12 +17,16 @@ import java.util.logging.Logger;
  * @author 5ei
  */
 public class Listener extends Thread {
-    
+
     private Socket socket;
-    
+
+    public Listener(Socket socket) {
+        this.socket = socket;
+    }
+
     @Override
     public void run() {
-        
+
         try {
             DataInputStream is = new DataInputStream(socket.getInputStream());
             while (true) {
@@ -31,7 +35,7 @@ public class Listener extends Thread {
                 b = Arrays.copyOfRange(b, 0, byteletti);
                 Interpreter i = new Interpreter(b);
             }
-            
+
         } catch (IOException ex) {
             Logger.getLogger(Listener.class.getName()).log(Level.SEVERE, null, ex);
         }

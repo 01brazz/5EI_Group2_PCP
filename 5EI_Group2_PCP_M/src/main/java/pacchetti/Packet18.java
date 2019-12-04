@@ -1,7 +1,7 @@
 /*
-* CHANGE OF ALIAS 
-*Un utente potrebbe voler cambiare il suo alias. Questo pacchetto consente di farlo.
-*/
+ * CHANGE OF ALIAS 
+ *Un utente potrebbe voler cambiare il suo alias. Questo pacchetto consente di farlo.
+ */
 package pacchetti;
 
 /**
