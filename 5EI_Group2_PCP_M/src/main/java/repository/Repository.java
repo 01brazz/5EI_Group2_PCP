@@ -5,6 +5,7 @@
  */
 package repository;
 
+import java.io.DataOutputStream;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -22,6 +23,6 @@ public class Repository {
     //quando si clicca il bottone invio il metodo prende l'alias, crea il pacchetto 01 col testo preso
     //nel textbox e lo invia
     static public Map<String, Object> aliasInvio = null;
-    
-     static public Map<ArrayList,String> userList = null;
+    static public Map<String, ArrayList> userList = null;
+    static public Map<String, Object> os = null;
 }

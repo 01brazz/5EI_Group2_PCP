@@ -29,14 +29,15 @@ public class ChatTPIv1 {
 
             DataOutputStream os = new DataOutputStream(socket.getOutputStream());
 
-            Client client = new Client(os);
+            Repository.os.put("os", os);
+            Client client = new Client();
 
             Messaggistica.main(args);
             Login.main(args);
-            
+
             Listener listener = new Listener(socket);
             listener.start();
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println(e);
         }
     }
