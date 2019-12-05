@@ -14,9 +14,6 @@ import java.awt.Frame;
  */
 public class Messaggistica extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Messaggistica
-     */
     public Messaggistica() {
         initComponents();
     }

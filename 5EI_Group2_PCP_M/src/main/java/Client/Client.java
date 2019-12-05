@@ -6,30 +6,14 @@
 package Client;
 
 import pacchetti.*;
-import chat.tpiv1.ChatTPIv1;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.Socket;
 
 /**
  *
  * @author 5ei
  */
 public class Client {
-
-    private DataOutputStream os;
-
-    public Client(DataOutputStream socket) {
-        this.os = socket;
-    }
-
-    public DataOutputStream getOs() {
-        return os;
-    }
-
-    public void setOs(DataOutputStream os) {
-        this.os = os;
-    }
 
     public static byte[] login(String Alias, String Topic) {
         Packet10 p = new Packet10(Alias, Topic);
@@ -73,7 +57,7 @@ public class Client {
         return PacchettoChangeAlias;
     }
 
-    public void send(byte[] packet) throws IOException {
-        DataOutputStream os = this.getOs();
+    public static void send(DataOutputStream os, byte[] packet) throws IOException {
+        os.write(packet);
     }
 }
