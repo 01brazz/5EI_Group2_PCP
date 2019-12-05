@@ -206,9 +206,6 @@ public class Messaggistica extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                Frame frame = new Messaggistica();
-                frame.setSize(730, 530);
-                frame.setVisible(true);
             }
         });
     }
