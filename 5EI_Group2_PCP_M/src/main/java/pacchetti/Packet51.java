@@ -29,7 +29,7 @@ import repository.Repository;
 public class Packet51 {
 
 
-    public static void interpretaP(byte[] pacchetto) {
+    public static ArrayList interpretaP(byte[] pacchetto) {
 
         byte tipo = pacchetto[1];
         byte list_length = pacchetto[2];
@@ -39,5 +39,7 @@ public class Packet51 {
         String User = Base64.getEncoder().encodeToString(List);
 
         ArrayList list = gson.fromJson(User, ArrayList.class);
+        
+        return list;
     }
 }

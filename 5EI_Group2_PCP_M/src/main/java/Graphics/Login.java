@@ -23,6 +23,8 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
+    private String alias;
+
     public Login() {
         initComponents();
     }
@@ -174,8 +176,7 @@ public class Login extends javax.swing.JFrame {
         Connection connection = new Connection();
         String alias = jTextField1.getText();
         String topic = jTextField2.getText();
-        Repository.credentials.put("alias", alias);
-        Repository.credentials.put("topic", topic);
+        this.alias=alias;
         try {
             connection.connect();
             connection.login(alias, topic);
@@ -184,7 +185,14 @@ public class Login extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
+<<<<<<< HEAD
         
+=======
+        this.setVisible(false);
+        Messaggistica mex = new Messaggistica();
+        mex.setSize(730, 530);
+        mex.setVisible(true);
+>>>>>>> e31f17c2043daeeafdd08c20ba5c64bb12728c24
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
