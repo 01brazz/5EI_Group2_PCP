@@ -1,4 +1,4 @@
-- Cambiare passaggio OutputStream in classe Connessione con tutti i parametri di collegamento
+﻿- Cambiare passaggio OutputStream in classe Connessione con tutti i parametri di collegamento
 - Il login deve apparire da solo, stabilisce la connessione quando si preme il bottone invio,
   chiude la finestra login e apre Messaggistica
 - In massaggistica deve esserci lo stato (alias, indirizzo a cui siamo connessi)

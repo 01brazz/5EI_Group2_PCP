@@ -21,50 +21,36 @@ public class Packet01 {
     //metodo per creare pacchetto
     public static byte[] createP(byte[] id, String Alias, String Message) {
         byte[] UserToUser = new byte[2048];
-
         int i = 0;
         UserToUser[i] = 01;
-
         for (byte b : id) {
             UserToUser[i++] = b;
         }
-
         for (byte b : Alias.getBytes()) {
             UserToUser[i++] = b;
         }
-
         UserToUser[i++] = 0;
-
         for (byte b : Message.getBytes()) {
             UserToUser[i++] = b;
         }
-
         UserToUser[i++] = 0;
-
         return UserToUser;
     }
 
     public static void interpretaP(byte[] pacchetto) {
         byte[] sourceAliasByteOp = new byte[2048];
-
         int i = 0;
-
         for (byte b : pacchetto) {
-
             if (b == 0) {
-
                 break;
             } else {
                 sourceAliasByteOp[i++] = b;
             }
         }
-
         byte[] sourceAliasByte = Arrays.copyOfRange(sourceAliasByteOp, 1, sourceAliasByteOp.length);
         byte[] messageByte = Arrays.copyOfRange(pacchetto, i++, pacchetto.length - 1);
 
         String sourceAlias = Base64.getEncoder().encodeToString(sourceAliasByte);
         String message = Base64.getEncoder().encodeToString(messageByte);
-
-        Repository.messages.put(sourceAlias, message);
     }
 }

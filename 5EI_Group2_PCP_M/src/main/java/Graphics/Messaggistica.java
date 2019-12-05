@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package Graphics;
+
 import repository.Repository;
-import Client.Client;
 import java.awt.Frame;
 
 /**
@@ -172,7 +172,7 @@ public class Messaggistica extends javax.swing.JFrame {
         String text = jTextField1.getText();
         String user = (String) Repository.aliasInvio.get("alias");
         byte[] id = (byte[]) Repository.credentials.get("id");
-        Client.userToUser(id, user, text);
+        //vedere a chi inviare
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -201,7 +201,7 @@ public class Messaggistica extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Messaggistica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override

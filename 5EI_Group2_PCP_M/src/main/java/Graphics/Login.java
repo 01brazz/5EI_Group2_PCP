@@ -5,7 +5,8 @@
  */
 package Graphics;
 
-import Client.Client;
+import Client.Connection;
+import Client.Listener;
 import java.awt.Frame;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -170,18 +171,19 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+        Connection connection = new Connection();
         String alias = jTextField1.getText();
         String topic = jTextField2.getText();
         Repository.credentials.put("alias", alias);
         Repository.credentials.put("topic", topic);
-        byte[] login = Client.login(alias, topic);
         try {
-            Client.send((DataOutputStream) Repository.os.get("os"), login);
+            connection.connect();
+            connection.login(alias, topic);
+            Listener listener = new Listener(connection.getSocket());
+            listener.start();
         } catch (IOException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

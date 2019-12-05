@@ -39,9 +39,5 @@ public class Packet51 {
         String User = Base64.getEncoder().encodeToString(List);
 
         ArrayList list = gson.fromJson(User, ArrayList.class);
-
-
-        Repository.messages.put("lista", list);
-
     }
 }

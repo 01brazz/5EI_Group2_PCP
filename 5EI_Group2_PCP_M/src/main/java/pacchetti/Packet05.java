@@ -1,5 +1,4 @@
 /*
- <<<<<<< HEAD
  * USER TO CHAT   
  * L'utente invia questo messaggio alla chat room a cui è stata connessa l'ultima volta.
  * Se il messaggio è maggiore di [2044] significa che il messaggio è stato suddiviso tra più pacchetti. L'ultimo pacchetto è inferiore al 2044.
@@ -9,7 +8,6 @@
  * L'utente invia questo messaggio alla chat room a cui è stata connessa l'ultima volta.
  * Se il messaggio è maggiore di [2044] significa che il messaggio è stato suddiviso tra più pacchetti. L'ultimo pacchetto è inferiore al 2044.
  * Il client di destinazione riceverà quindi un pacchetto con l'alias di destinazione modificato in alias di origine e nessun id.
- >>>>>>> dd7a588fe4c94ce71f20454470668e6dad90c1bd
  */
 package pacchetti;
 
@@ -57,7 +55,5 @@ public class Packet05 {
 
         String sourceAlias = Base64.getEncoder().encodeToString(sourceAliasByte);
         String message = Base64.getEncoder().encodeToString(messageByte);
-
-        Repository.messages.put(sourceAlias, message);
     }
 }

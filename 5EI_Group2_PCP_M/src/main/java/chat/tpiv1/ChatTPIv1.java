@@ -5,7 +5,6 @@
  */
 package chat.tpiv1;
 
-import Client.Client;
 import Client.Listener;
 import java.io.*;
 import java.net.*;
@@ -24,22 +23,6 @@ public class ChatTPIv1 {
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
-        try {
-            Socket socket = new Socket("127.0.0.1", 53101);
-
-            DataOutputStream os = new DataOutputStream(socket.getOutputStream());
-
-            Repository.os.put("os", os);
-            Client client = new Client();
-
-            
-            Messaggistica.main(args);
-            Login.main(args);
-
-            Listener listener = new Listener(socket);
-            listener.start();
-        } catch (IOException e) {
-            System.out.println(e);
-        }
+        Login.main(args);
     }
 }
