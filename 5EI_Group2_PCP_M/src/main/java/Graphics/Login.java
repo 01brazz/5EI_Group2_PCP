@@ -7,6 +7,10 @@ package Graphics;
 
 import Client.Client;
 import java.awt.Frame;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import repository.Repository;
 
 /**
@@ -171,7 +175,12 @@ public class Login extends javax.swing.JFrame {
         String topic = jTextField2.getText();
         Repository.credentials.put("alias", alias);
         Repository.credentials.put("topic", topic);
-        Client.login(alias, topic);
+        byte[] login = Client.login(alias, topic);
+        try {
+            Client.send((DataOutputStream) Repository.os.get("os"), login);
+        } catch (IOException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 

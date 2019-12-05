@@ -75,6 +75,8 @@ public class Packet51 {
 
         ArrayList list = gson.fromJson(User, ArrayList.class);
 
-        Repository.messages.put("",list);
+
+        Repository.messages.put("lista", list);
+
     }
 }
