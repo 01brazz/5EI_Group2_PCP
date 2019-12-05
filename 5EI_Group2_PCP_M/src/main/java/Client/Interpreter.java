@@ -37,23 +37,23 @@ public class Interpreter extends Thread {
 
         switch (op) {
             case ("20"):
-                Packet20 p = new Packet20(packet, "alias");
-                p.interpretaP(packet);
+                Packet20 p = new Packet20();
+                p.interpretaP(packet,Repository.aliasInvio.get("alias").toString());
 
             case ("11"):
-                Packet11 a = new Packet11(packet);
+                Packet11 a = new Packet11();
                 a.interpretaP(packet);
 
             case ("05"):
-                Packet05 u = new Packet05(packet, "");
+                Packet05 u = new Packet05();
                 u.interpretaP(packet);
                 
             case ("01"):
-                Packet05 m = new Packet05(packet, "");
+                Packet05 m = new Packet05();
                 m.interpretaP(packet);
                 
             case ("51"):
-                Packet51 l = new Packet51("","","");
+                Packet51 l = new Packet51();
                 l.interpretaP(packet);
                 
             case ("255"):

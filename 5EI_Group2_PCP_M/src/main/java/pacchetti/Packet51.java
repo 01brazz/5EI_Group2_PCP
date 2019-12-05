@@ -28,43 +28,8 @@ import repository.Repository;
  */
 public class Packet51 {
 
-    private String Type;
-    private String List_Length;
-    private String json_content;
 
-    public Packet51(String Type,
-            String List_Lenght, String json_content) {
-        this.Type = Type;
-        this.List_Length = List_Lenght;
-        this.json_content = json_content;
-
-    }
-
-    public String getType() {
-        return Type;
-    }
-
-    public void setType(String Type) {
-        this.Type = Type;
-    }
-
-    public String getList_Length() {
-        return List_Length;
-    }
-
-    public void setList_Length(String List_Length) {
-        this.List_Length = List_Length;
-    }
-
-    public String getJson_content() {
-        return json_content;
-    }
-
-    public void setJson_content(String json_content) {
-        this.json_content = json_content;
-    }
-
-    public void interpretaP(byte[] pacchetto) {
+    public static void interpretaP(byte[] pacchetto) {
 
         byte tipo = pacchetto[1];
         byte list_length = pacchetto[2];

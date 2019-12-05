@@ -14,7 +14,7 @@ import java.util.Base64;
  */
 public class Packet255 {
 
-    public String interpretaP(byte[] pacchetto) {
+    public static String interpretaP(byte[] pacchetto) {
 
         String reason = new String();
 

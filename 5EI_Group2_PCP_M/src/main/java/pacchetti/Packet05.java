@@ -25,45 +25,22 @@ import repository.Repository;
  */
 public class Packet05 {
 
-    private byte[] id;
-    private String message;
-
-    public Packet05(byte[] id, String message) {
-        this.id = id;
-        this.message = message;
-    }
-
-    public byte[] getId() {
-        return id;
-    }
-
-    public void setId(byte[] id) {
-        this.id = id;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public byte[] createP() {           //metodo creazione pacchetto
+   
+    public static byte[] createP(byte[] id, String message) {           //metodo creazione pacchetto
         byte[] packet = new byte[2048];
         int i = 0;
         packet[i] = 05;               //opcode
-        for (byte b : this.id) {        //id
+        for (byte b : id) {        //id
             packet[i++] = b;
         }
-        for (byte b : this.message.getBytes()) {
+        for (byte b : message.getBytes()) {
             packet[i++] = b;            //message
         }
         packet[i++] = 0;                //1 byte
         return packet;
     }
 
-    public void interpretaP(byte[] pacchetto) {
+    public static void interpretaP(byte[] pacchetto) {
         byte[] sourceAliasByteOp = new byte[2048];
 
         int i = 0;

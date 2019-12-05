@@ -22,34 +22,20 @@ import java.util.Arrays;
  */
 public class Packet11 {
 
-    private byte[] id;
-
-    public Packet11(byte[] id) {
-        this.id = id;
-    }
-
-    public byte[] getId() {
-        return id;
-    }
-
-    public void setId(byte[] id) {
-        this.id = id;
-    }
-
     //metodo per creare pacchetto
-    public byte[] createP() {
+    public static byte[] createP(byte[] id) {
         byte[] UserToUser = new byte[2048];
 
         int i = 0;
         UserToUser[i] = 11;
 
-        for (byte b : this.id) {
+        for (byte b : id) {
             UserToUser[i++] = b;
         }
         return UserToUser;
     }
 
-    public String interpretaP(byte[] pacchetto) {
+    public static String interpretaP(byte[] pacchetto) {
 
         String reason = new String();
 
@@ -63,8 +49,5 @@ public class Packet11 {
         }
         return reason;
     }
-    //public byte[] interpretaP(byte[] pacchetto) {
-    //    byte[] aliasC = Arrays.copyOfRange(pacchetto, 1, pacchetto.length);
-    // return aliasC;
-    //}
+    
 }

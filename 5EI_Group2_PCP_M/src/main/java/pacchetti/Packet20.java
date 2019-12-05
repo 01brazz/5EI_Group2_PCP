@@ -13,41 +13,17 @@ import java.util.*;
  */
 public class Packet20 {
 
-    private byte[] pacchetto;
-    private String alias;
 
-    public Packet20(byte[] pacchetto, String alias) {
-        this.pacchetto = pacchetto;
-        this.alias = alias;
-    }
-
-    public byte[] getPacchetto() {
-        return pacchetto;
-    }
-
-    public void setPacchetto(byte[] pacchetto) {
-        this.pacchetto = pacchetto;
-    }
-
-    public String getAlias() {
-        return alias;
-    }
-
-    public void setAlias(String alias) {
-        this.alias = alias;
-    }
-
-    public byte[] interpretaP(byte[] pacchetto) {
-        byte[] aliasC = Arrays.copyOfRange(pacchetto, 3, pacchetto.length - 1);
-
-        return aliasC;
-    }
-
-    public void confrontaAlias(byte[] AliasC) {
-        if (AliasC == this.alias.getBytes()) {
-            System.out.println("stonks");
+    public static String interpretaP(byte[] pacchetto,String alias) {
+        byte[] AliasC = Arrays.copyOfRange(pacchetto, 3, pacchetto.length - 1);
+        
+        if (AliasC == alias.getBytes()) {
+           return "Alias corretto";
         } else {
-            System.out.println("not stonks");
+           return "Alias non corretto";
         }
+        
     }
+
+    
 }
