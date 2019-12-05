@@ -1,0 +1,13 @@
+- Cambiare passaggio OutputStream in classe Connessione con tutti i parametri di collegamento
+- Il login deve apparire da solo, stabilisce la connessione quando si preme il bottone invio,
+  chiude la finestra login e apre Messaggistica
+- In massaggistica deve esserci lo stato (alias, indirizzo a cui siamo connessi)
+- In messaggistica deve esserci il bottone di disconnessione
+- I pacchetti in invio e ricezione vengono direttamente mostrati nrlla textArea (editable disabilitata)
+  senza bisogno di salvarli nel repo
+- Nal main si avvia solo il main di login, in cui il bottone avvierà messaggistica e il thread
+- La classe Client non serve, mettiamo i metodi crea e interpreta statici nelle classi pacchetti
+- Creare metodo visualizzazione lista utenti nell'area di destra
+- Creare metodo che seleziona l'alias quando si seleziona l'utente nella lista per inviare
+  messaggio personale
+- Aggiornamento colonna centrale in base all'utente selezionato (storico chat?)
