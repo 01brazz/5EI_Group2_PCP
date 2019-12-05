@@ -27,7 +27,7 @@ public class Packet11 {
         byte[] UserToUser = new byte[2048];
 
         int i = 0;
-        UserToUser[i] = 11;
+        UserToUser[i++] = 11;
 
         for (byte b : id) {
             UserToUser[i++] = b;
@@ -35,9 +35,11 @@ public class Packet11 {
         return UserToUser;
     }
 
-    public static String interpretaP(byte[] pacchetto) {
+    public static void interpretaP(byte[] pacchetto) {
 
         String reason = new String();
+        
+        
 
         switch (pacchetto[1]) {
             case (0):
@@ -47,7 +49,7 @@ public class Packet11 {
             case (2):
                 reason = ("server gone offline");
         }
-        return reason;
+        System.out.println( reason);
     }
     
 }

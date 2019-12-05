@@ -18,4 +18,6 @@ public class Repository {
     static public Map<String, Object> credentials = null;
     static public Map<String, Object> aliasInvio = null;
     static public Map<String, ArrayList> userList = null;
+    
+    
 }

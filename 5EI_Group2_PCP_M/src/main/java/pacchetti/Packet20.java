@@ -6,16 +6,26 @@
 package pacchetti;
 
 import java.util.*;
+import repository.Repository;
 
 /**
  *
  * @author 17726
  */
 public class Packet20 {
+    
+    private  static  byte[] ID;
 
+    public static byte[] getID() {
+        return ID;
+    }
+    
+    
 
     public static String interpretaP(byte[] pacchetto,String alias) {
         byte[] AliasC = Arrays.copyOfRange(pacchetto, 3, pacchetto.length - 1);
+        
+        ID = Arrays.copyOfRange(pacchetto, 1, 3);
         
         if (AliasC == alias.getBytes()) {
            return "Alias corretto";
@@ -24,6 +34,7 @@ public class Packet20 {
         }
         
     }
+    
 
     
 }

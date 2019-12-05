@@ -8,6 +8,9 @@ package Client;
 import java.io.*;
 import java.net.*;
 import pacchetti.Packet10;
+import pacchetti.Packet11;
+import pacchetti.Packet20;
+import repository.Repository;
 
 /**
  *
@@ -62,5 +65,11 @@ public class Connection {
     
     public void send(byte[] packet) throws IOException {
         this.os.write(packet);
+    }
+    
+    public void close()throws IOException {
+        byte[] p = Packet11.createP(pacchetti.Packet20.getID());
+        this.os.write(p);
+        socket.close();
     }
 }

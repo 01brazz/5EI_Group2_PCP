@@ -16,7 +16,7 @@ public class Packet10 {
     public static byte[] createP(String Alias, String Topic) {
         byte[] packet = new byte[2048];
         int i = 0;
-        packet[i] = 10;
+        packet[i++] = 10;
         packet[i++] = 0;
         for (byte b : Alias.getBytes()) {
             packet[i++] = b;
@@ -28,4 +28,6 @@ public class Packet10 {
 
         return packet;
     }
+    
+    
 }
