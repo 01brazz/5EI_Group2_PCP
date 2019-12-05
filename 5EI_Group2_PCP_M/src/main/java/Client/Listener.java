@@ -5,6 +5,7 @@
  */
 package Client;
 
+import Graphics.Messaggistica;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.Socket;
@@ -19,6 +20,7 @@ import java.util.logging.Logger;
 public class Listener extends Thread {
 
     private Socket socket;
+    private Messaggistica mex;
 
     public Listener(Socket socket) {
         this.socket = socket;
@@ -33,7 +35,7 @@ public class Listener extends Thread {
                 byte[] b = new byte[2048];
                 int byteletti = is.read(b);
                 b = Arrays.copyOfRange(b, 0, byteletti);
-                Interpreter i = new Interpreter(b);
+                Interpreter i = new Interpreter(b, mex);
             }
 
         } catch (IOException ex) {

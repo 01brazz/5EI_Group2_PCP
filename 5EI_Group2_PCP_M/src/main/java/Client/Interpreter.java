@@ -5,17 +5,14 @@
  */
 package Client;
 
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import Graphics.*;
+import java.awt.Component;
+import java.io.*;
+import java.util.*;
+import javax.swing.JList;
+import javax.swing.JPanel;
 import repository.Repository;
-import pacchetti.Packet20;
-import pacchetti.Packet11;
-import pacchetti.Packet05;
-import pacchetti.Packet255;
-import pacchetti.Packet51;
+import pacchetti.*;
 
 /**
  *
@@ -24,9 +21,11 @@ import pacchetti.Packet51;
 public class Interpreter extends Thread {
 
     private byte[] packet;
+    private Messaggistica mex;
 
-    public Interpreter(byte[] packet) {
+    public Interpreter(byte[] packet, Messaggistica mex) {
         this.packet = packet;
+        this.mex = mex;
     }
 
     @Override
@@ -38,7 +37,7 @@ public class Interpreter extends Thread {
         switch (op) {
             case ("20"):
                 Packet20 p = new Packet20();
-                p.interpretaP(packet,Repository.aliasInvio.get("alias").toString());
+                p.interpretaP(packet, Repository.aliasInvio.get("alias").toString());
 
             case ("11"):
                 Packet11 a = new Packet11();
@@ -47,20 +46,23 @@ public class Interpreter extends Thread {
             case ("05"):
                 Packet05 u = new Packet05();
                 u.interpretaP(packet);
-                
+
             case ("01"):
                 Packet05 m = new Packet05();
                 m.interpretaP(packet);
-                
+
             case ("51"):
                 Packet51 l = new Packet51();
-                l.interpretaP(packet);
-                
+                ArrayList lista = l.interpretaP(packet);
+                JList jList1 = this.mex.getjList1();
+                int pos = 0;
+                for (Object alias : lista) {
+                    jList1.add((Component) alias, pos++);
+                }
+
             case ("255"):
                 Packet255 e = new Packet255();
                 e.interpretaP(packet);
-            
-            
         }
     }
 }
