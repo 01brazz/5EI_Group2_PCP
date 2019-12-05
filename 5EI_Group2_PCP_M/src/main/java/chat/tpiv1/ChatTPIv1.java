@@ -32,6 +32,7 @@ public class ChatTPIv1 {
             Repository.os.put("os", os);
             Client client = new Client();
 
+            
             Messaggistica.main(args);
             Login.main(args);
 
