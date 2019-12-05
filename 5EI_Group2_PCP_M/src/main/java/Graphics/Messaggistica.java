@@ -37,11 +37,7 @@ public class Messaggistica extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-<<<<<<< HEAD
-        jList1 = new javax.swing.JList<>();
-=======
         jList1 = new javax.swing.JList();
->>>>>>> e31f17c2043daeeafdd08c20ba5c64bb12728c24
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
@@ -88,29 +84,13 @@ public class Messaggistica extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(20, 20, 20));
 
-<<<<<<< HEAD
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jList1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-=======
         jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
->>>>>>> e31f17c2043daeeafdd08c20ba5c64bb12728c24
         jScrollPane1.setViewportView(jList1);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
-=======
             .addGap(0, 235, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel5Layout.createSequentialGroup()
@@ -126,7 +106,6 @@ public class Messaggistica extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE)
                     .addContainerGap()))
->>>>>>> e31f17c2043daeeafdd08c20ba5c64bb12728c24
         );
 
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -304,14 +283,7 @@ public class Messaggistica extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-<<<<<<< HEAD
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-=======
     private javax.swing.JList jList1;
->>>>>>> e31f17c2043daeeafdd08c20ba5c64bb12728c24
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

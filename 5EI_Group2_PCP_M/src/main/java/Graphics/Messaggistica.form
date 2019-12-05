@@ -147,9 +147,6 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
-              <Component id="jScrollPane1" alignment="0" pref="215" max="32767" attributes="0"/>
-=======
               <EmptySpace min="0" pref="235" max="32767" attributes="0"/>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
@@ -158,14 +155,10 @@
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
->>>>>>> e31f17c2043daeeafdd08c20ba5c64bb12728c24
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
-              <Component id="jScrollPane1" alignment="0" pref="405" max="32767" attributes="0"/>
-=======
               <EmptySpace min="0" pref="425" max="32767" attributes="0"/>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
@@ -174,7 +167,6 @@
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
->>>>>>> e31f17c2043daeeafdd08c20ba5c64bb12728c24
           </Group>
         </DimensionLayout>
       </Layout>
@@ -189,28 +181,10 @@
             <Component class="javax.swing.JList" name="jList1">
               <Properties>
                 <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-<<<<<<< HEAD
-                  <StringArray count="5">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
-                    <StringItem index="4" value="Item 5"/>
-                  </StringArray>
-                </Property>
-                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-=======
                   <StringArray count="0"/>
                 </Property>
                 <Property name="selectionMode" type="int" value="0"/>
               </Properties>
->>>>>>> e31f17c2043daeeafdd08c20ba5c64bb12728c24
             </Component>
           </SubComponents>
         </Container>
