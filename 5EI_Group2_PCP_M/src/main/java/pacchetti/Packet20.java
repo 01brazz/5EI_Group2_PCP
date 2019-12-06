@@ -23,8 +23,8 @@ public class Packet20 {
     public static void interpretaP(byte[] pacchetto, String alias) {
         byte[] AliasC = Arrays.copyOfRange(pacchetto, 3, pacchetto.length - 1);
 
-        ID = Arrays.copyOfRange(pacchetto, 1, 3);
-
+        Packet20.ID = Arrays.copyOfRange(pacchetto, 1, 3);
+        
         if (AliasC == alias.getBytes()) {
             System.out.println("Alias corretto");
         } else {

@@ -10,7 +10,6 @@ package pacchetti;
  */
 public class Packet50 {
 
-
     public static byte[] createP(byte[] id) {           //metodo creazione pacchetto
         byte[] packet = new byte[2048];
         int i = 0;
