@@ -180,7 +180,7 @@ public class Login extends javax.swing.JFrame {
         String topic = jTextField2.getText();
         this.alias = alias;
         try {
-            Connection connection = new Connection("127.0.0.1");
+            Connection connection = new Connection("79.31.190.185");
 
             connection.connect(alias, topic);
 
