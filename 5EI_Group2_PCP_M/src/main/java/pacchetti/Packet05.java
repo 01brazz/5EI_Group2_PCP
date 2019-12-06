@@ -52,8 +52,8 @@ public class Packet05 {
         byte[] sourceAliasByte = Arrays.copyOfRange(sourceAliasByteOp, 1, sourceAliasByteOp.length);
         byte[] messageByte = Arrays.copyOfRange(pacchetto, i++, pacchetto.length - 1);
 
-        String sourceAlias = Base64.getEncoder().encodeToString(sourceAliasByte);
-        String message = Base64.getEncoder().encodeToString(messageByte);
+        String sourceAlias = Arrays.toString(sourceAliasByte);
+        String message = Arrays.toString(messageByte);
         ArrayList<String> dati = new ArrayList();
         dati.add(sourceAlias);
         dati.add(message);
