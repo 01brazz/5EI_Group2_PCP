@@ -31,13 +31,12 @@ public class Interpreter extends Thread {
     @Override
     public void run() {
         byte[] opcode = new byte[1];
-        System.arraycopy(this.packet, 0, opcode, 0, 1);
+        opcode=Arrays.copyOfRange(packet, 0, 1);
         String op = Arrays.toString(opcode);
 
         switch (op) {
             case ("20"):
-                Packet20 p = new Packet20();
-                p.interpretaP(packet, Repository.aliasInvio.get("alias").toString());
+                Packet20.interpretaP(packet, Login.alias);
 
             case ("11"):
                 Packet11 a = new Packet11();

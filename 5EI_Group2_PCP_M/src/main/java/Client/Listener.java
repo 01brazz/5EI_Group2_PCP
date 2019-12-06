@@ -33,11 +33,13 @@ public class Listener extends Thread {
     public void run() {
 
         try {            
+           
             while (true) {
                 byte[] b = new byte[2048];
                 int byteletti = connection.getIs().read(b);
                 b = Arrays.copyOfRange(b, 0, byteletti);
                 Interpreter i = new Interpreter(b, mex);
+                i.start();
             }
         } catch (IOException ex) {
             Logger.getLogger(Listener.class.getName()).log(Level.SEVERE, null, ex);

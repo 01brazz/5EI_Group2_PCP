@@ -23,7 +23,7 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
-    String alias;
+    public static String alias;
 
     public Login() {
         initComponents();
@@ -185,6 +185,8 @@ public class Login extends javax.swing.JFrame {
             Messaggistica mex = new Messaggistica(connection, this);
             Listener listener = new Listener(connection, mex);
             listener.start();
+           
+            
 
             mex.setSize(730, 530);
             mex.setVisible(true);
@@ -224,7 +226,8 @@ public class Login extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
-            public void run() {
+            public void run() 
+            {
                 Frame frame = new Login();
                 frame.setVisible(true);
             }
