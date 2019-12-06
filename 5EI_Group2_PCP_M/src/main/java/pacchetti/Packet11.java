@@ -24,7 +24,7 @@ public class Packet11 {
 
     //metodo per creare pacchetto
     public static byte[] createP(byte[] id) {
-        byte[] UserToUser = new byte[2048];
+        byte[] UserToUser = new byte[3];
 
         int i = 0;
         UserToUser[i++] = 11;

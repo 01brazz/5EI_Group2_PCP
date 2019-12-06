@@ -35,9 +35,14 @@ public class Listener extends Thread {
         try {            
             while (true) {
                 byte[] b = new byte[2048];
-                int byteletti = connection.getIs().read(b);
-                b = Arrays.copyOfRange(b, 0, byteletti);
+                connection.getIs().read(b);
+                
                 Interpreter i = new Interpreter(b, mex);
+                
+                Thread t1 = new Thread(i);
+                System.out.println("thread creato");
+                t1.start();
+                
             }
         } catch (IOException ex) {
             Logger.getLogger(Listener.class.getName()).log(Level.SEVERE, null, ex);

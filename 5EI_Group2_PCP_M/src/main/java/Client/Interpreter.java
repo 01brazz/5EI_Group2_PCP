@@ -30,10 +30,11 @@ public class Interpreter extends Thread {
 
     @Override
     public void run() {
-        byte[] opcode = new byte[1];
-        System.arraycopy(this.packet, 0, opcode, 0, 1);
+        byte[] opcode= new byte[1];
+        opcode = Arrays.copyOfRange(packet, 0, 1);
+        
         String op = Arrays.toString(opcode);
-
+        System.out.println("funziona");
         switch (op) {
             case ("20"):
                 Packet20 p = new Packet20();
