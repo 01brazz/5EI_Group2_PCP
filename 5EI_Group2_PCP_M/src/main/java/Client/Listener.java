@@ -39,13 +39,12 @@ public class Listener extends Thread {
                 connection.getIs().read(b);
                 
                 Interpreter i = new Interpreter(b, mex);
-                
-                Thread t1 = new Thread(i);
+ 
                 System.out.println("thread creato");
-                t1.start();
                 
-
                 i.start();
+
+                
             }
         } catch (IOException ex) {
             Logger.getLogger(Listener.class.getName()).log(Level.SEVERE, null, ex);

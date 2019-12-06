@@ -225,6 +225,7 @@ public class Messaggistica extends javax.swing.JFrame {
             byte[] disc = Packet11.createP(Packet20.getID());
             this.connection.send(disc);
             this.connection.getSocket().close();
+            
         } catch (IOException ex) {
             Logger.getLogger(Messaggistica.class.getName()).log(Level.SEVERE, null, ex);
         }

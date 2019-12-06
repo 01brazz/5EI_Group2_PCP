@@ -31,14 +31,13 @@ public class Interpreter extends Thread {
     @Override
     public void run() {
 
-        byte[] opcode= new byte[1];
-        opcode = Arrays.copyOfRange(packet, 0, 1);
-
-
-        String op = Arrays.toString(opcode);
-        System.out.println("funziona");
+        Byte opcode= packet[0];
+        
+        String op = Byte.toString(opcode);
+        System.out.println(op);
         switch (op) {
             case ("20"):
+                System.out.println("dio");
                 Packet20.interpretaP(packet, Login.alias);
 
             case ("11"):

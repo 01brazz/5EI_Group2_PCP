@@ -178,7 +178,7 @@ public class Login extends javax.swing.JFrame {
         String topic = jTextField2.getText();
         this.alias = alias;
         try {
-            Connection connection = new Connection("172.16.7.141");
+            Connection connection = new Connection("127.0.0.1");
             
             connection.connect(alias,topic);
             
