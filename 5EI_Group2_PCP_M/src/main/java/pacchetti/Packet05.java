@@ -26,7 +26,7 @@ public class Packet05 {
 
    
     public static byte[] createP(byte[] id, String message) {           //metodo creazione pacchetto
-        byte[] packet = new byte[2048];
+        byte[] packet = new byte[4+message.length()];
         int i = 0;
         packet[i] = 05;               //opcode
         for (byte b : id) {        //id
