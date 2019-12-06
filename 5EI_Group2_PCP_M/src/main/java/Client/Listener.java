@@ -35,9 +35,11 @@ public class Listener extends Thread {
                 byte[] b = new byte[2048];
                 connection.getIs().read(b);
                 Interpreter i = new Interpreter(b, mex);
-                System.out.println("thread creato");
+                
                 i.start();
+                System.out.println("thread creato");
             }
+            
         } catch (IOException ex) {
             Logger.getLogger(Listener.class.getName()).log(Level.SEVERE, null, ex);
         }

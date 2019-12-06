@@ -18,7 +18,7 @@ import pacchetti.*;
  *
  * @author 5ei
  */
-public class Interpreter extends Thread {
+public class Interpreter extends Thread{
 
     private byte[] packet;
     private Messaggistica mex;
@@ -48,9 +48,9 @@ public class Interpreter extends Thread {
                 ArrayList<String> dati = Packet05.interpretaP(packet);
                 mex.getjTextArea1().setText(mex.getjTextArea1().getText() + "\n" + dati.get(0) + ": " + dati.get(1));
 
-            case ("1"):
+            case ("01"):
                 ArrayList<String> data = Packet01.interpretaP(packet);
-                mex.getjTextArea1().setText(mex.getjTextArea1().getText() + "\n" + data.get(0) + ": " + data.get(1));
+               
 
             case ("51"):
                 ArrayList lista = Packet51.interpretaP(packet);
