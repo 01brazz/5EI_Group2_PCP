@@ -6,7 +6,7 @@
 - I pacchetti in invio e ricezione vengono direttamente mostrati nrlla textArea (editable disabilitata)
   senza bisogno di salvarli nel repo
 - Nal main si avvia solo il main di login, in cui il bottone avvierà messaggistica e il thread
-- La classe Client non serve, mettiamo i metodi crea e interpreta statici nelle classi pacchetti
+-(OK) La classe Client non serve, mettiamo i metodi crea e interpreta statici nelle classi pacchetti
 - Creare metodo visualizzazione lista utenti nell'area di destra
 - Creare metodo che seleziona l'alias quando si seleziona l'utente nella lista per inviare
   messaggio personale

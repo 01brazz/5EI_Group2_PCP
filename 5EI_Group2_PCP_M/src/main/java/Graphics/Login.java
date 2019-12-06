@@ -23,7 +23,7 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
-    private String alias;
+    String alias;
 
     public Login() {
         initComponents();
@@ -173,22 +173,25 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Connection connection = new Connection();
+        
         String alias = jTextField1.getText();
         String topic = jTextField2.getText();
-        this.alias=alias;
+        this.alias = alias;
         try {
-            connection.connect();
-            connection.login(alias, topic);
-            Listener listener = new Listener(connection.getSocket());
+            Connection connection = new Connection("172.16.7.141");
+            
+            connection.connect(alias,topic);
+            
+            Messaggistica mex = new Messaggistica(connection, this);
+            Listener listener = new Listener(connection, mex);
             listener.start();
+
+            mex.setSize(730, 530);
+            mex.setVisible(true);
+            this.setVisible(false);
         } catch (IOException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-        this.setVisible(false);
-        Messaggistica mex = new Messaggistica();
-        mex.setSize(730, 530);
-        mex.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

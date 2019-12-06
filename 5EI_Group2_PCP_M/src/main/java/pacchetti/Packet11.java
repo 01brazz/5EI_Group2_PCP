@@ -38,8 +38,6 @@ public class Packet11 {
     public static void interpretaP(byte[] pacchetto) {
 
         String reason = new String();
-        
-        
 
         switch (pacchetto[1]) {
             case (0):
@@ -49,7 +47,6 @@ public class Packet11 {
             case (2):
                 reason = ("server gone offline");
         }
-        System.out.println( reason);
+        System.out.println(reason);
     }
-    
 }

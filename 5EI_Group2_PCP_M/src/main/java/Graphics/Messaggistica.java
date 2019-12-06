@@ -18,6 +18,8 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import pacchetti.Packet11;
+import pacchetti.Packet20;
 
 /**
  *
@@ -25,7 +27,12 @@ import javax.swing.JTextField;
  */
 public class Messaggistica extends javax.swing.JFrame {
 
-    public Messaggistica() {
+    private Connection connection;
+    private Login login;
+
+    public Messaggistica(Connection connection, Login login) {
+        this.connection = connection;
+        this.login = login;
         initComponents();
     }
 
@@ -50,7 +57,6 @@ public class Messaggistica extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
@@ -134,33 +140,26 @@ public class Messaggistica extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Alisas :");
+        jLabel1.setText("Alias :");
 
         jLabel2.setText("Connesso a :");
-
-        jLabel4.setForeground(new java.awt.Color(0, 204, 51));
-        jLabel4.setText(Repository.aliasInvio.get("alias").toString()
-        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 8, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton1)
-                        .addGap(0, 35, Short.MAX_VALUE))
+                        .addGap(0, 26, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jLabel1))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -172,9 +171,9 @@ public class Messaggistica extends javax.swing.JFrame {
                         .addGap(29, 29, 29))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 332, Short.MAX_VALUE)
+                    .addGap(0, 325, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 333, Short.MAX_VALUE)))
+                    .addGap(0, 325, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,8 +182,7 @@ public class Messaggistica extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -198,9 +196,9 @@ public class Messaggistica extends javax.swing.JFrame {
                 .addGap(17, 17, 17))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 220, Short.MAX_VALUE)
+                    .addGap(0, 222, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 221, Short.MAX_VALUE)))
+                    .addGap(0, 223, Short.MAX_VALUE)))
         );
 
         getAccessibleContext().setAccessibleParent(this);
@@ -223,20 +221,15 @@ public class Messaggistica extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
-        
-            Connection connection = new Connection();
         try {
-            connection.close();
+            byte[] disc = Packet11.createP(Packet20.getID());
+            this.connection.send(disc);
+            this.connection.getSocket().close();
         } catch (IOException ex) {
             Logger.getLogger(Messaggistica.class.getName()).log(Level.SEVERE, null, ex);
         }
-            
-                    
-            
-            
-            
-        
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -345,10 +338,7 @@ public class Messaggistica extends javax.swing.JFrame {
     public void setjLabel2(JLabel jLabel2) {
         this.jLabel2 = jLabel2;
     }
-    
-    
-    
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -356,7 +346,6 @@ public class Messaggistica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

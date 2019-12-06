@@ -19,13 +19,31 @@ import repository.Repository;
 public class Connection {
 
     private Socket socket;
-    private String ip;
-    private int port;
-    private DataOutputStream os;
+    private InetAddress ip;
+    private int port = 53101;
+    private DataInputStream is;
+    private BufferedOutputStream os;
 
-    public Connection() {
+    public Connection(String addr) throws UnknownHostException {
+        this.ip = InetAddress.getByName(addr);
     }
 
+    public DataInputStream getIs() {
+        return is;
+    }
+
+    public void setIs(DataInputStream is) {
+        this.is = is;
+    }
+
+    public BufferedOutputStream getOs() {
+        return os;
+    }
+
+    public void setOs(BufferedOutputStream os) {
+        this.os = os;
+    }
+    
     public Socket getSocket() {
         return socket;
     }
@@ -34,11 +52,11 @@ public class Connection {
         this.socket = socket;
     }
 
-    public String getIp() {
+    public InetAddress getIp() {
         return ip;
     }
 
-    public void setIp(String ip) {
+    public void setIp(InetAddress ip) {
         this.ip = ip;
     }
 
@@ -50,26 +68,19 @@ public class Connection {
         this.port = port;
     }
 
-    public void connect() throws IOException {
-        this.ip = "127.0.0.1";
-        this.port = 53101;
-        Socket socket = new Socket(ip, port);
-        DataOutputStream os = new DataOutputStream(socket.getOutputStream());
-        this.os = os;
+    public void connect(String alias, String topic) throws IOException {
+        this.socket = new Socket(ip, port);
+        byte[] to_send = Packet10.createP(alias, topic);
+        
+        this.is = new DataInputStream(socket.getInputStream());
+        this.os = new BufferedOutputStream(socket.getOutputStream());
+        
+        // invia la registrazione
+        this.send(to_send);        
     }
 
-    public void login(String Alias, String Topic) throws IOException {
-        byte[] p = Packet10.createP(Alias, Topic);
-        this.os.write(p);
-    }
-    
     public void send(byte[] packet) throws IOException {
         this.os.write(packet);
-    }
-    
-    public void close()throws IOException {
-        byte[] p = Packet11.createP(pacchetti.Packet20.getID());
-        this.os.write(p);
-        socket.close();
+        this.os.flush();
     }
 }

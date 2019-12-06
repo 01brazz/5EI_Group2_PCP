@@ -14,17 +14,21 @@ package pacchetti;
 public class Packet10 {
 
     public static byte[] createP(String Alias, String Topic) {
-        byte[] packet = new byte[2048];
+        byte[] packet = new byte[4+Alias.length()+Topic.length()];
         int i = 0;
         packet[i++] = 10;
         packet[i++] = 0;
         for (byte b : Alias.getBytes()) {
             packet[i++] = b;
         }
-
+        
+        packet[i++] = 0;
+        
         for (byte b : Topic.getBytes()) {
             packet[i++] = b;
         }
+        
+        packet[i++] = 0;
 
         return packet;
     }

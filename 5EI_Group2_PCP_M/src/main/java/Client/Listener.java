@@ -12,6 +12,7 @@ import java.net.Socket;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import Client.Connection;
 
 /**
  *
@@ -19,28 +20,27 @@ import java.util.logging.Logger;
  */
 public class Listener extends Thread {
 
-    private Socket socket;
+    private Connection connection;
     private Messaggistica mex;
+    
 
-    public Listener(Socket socket) {
-        this.socket = socket;
+    public Listener(Connection connection, Messaggistica mex) {
+        this.connection = connection;
+        this.mex = mex;
     }
 
     @Override
     public void run() {
 
-        try {
-            DataInputStream is = new DataInputStream(socket.getInputStream());
+        try {            
             while (true) {
                 byte[] b = new byte[2048];
-                int byteletti = is.read(b);
+                int byteletti = connection.getIs().read(b);
                 b = Arrays.copyOfRange(b, 0, byteletti);
                 Interpreter i = new Interpreter(b, mex);
             }
-
         } catch (IOException ex) {
             Logger.getLogger(Listener.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
-
