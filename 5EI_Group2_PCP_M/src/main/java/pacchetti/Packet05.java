@@ -24,9 +24,8 @@ import repository.Repository;
  */
 public class Packet05 {
 
-   
     public static byte[] createP(byte[] id, String message) {           //metodo creazione pacchetto
-        byte[] packet = new byte[4+message.length()];
+        byte[] packet = new byte[4 + message.length()];
         int i = 0;
         packet[i] = 05;               //opcode
         for (byte b : id) {        //id
@@ -40,7 +39,7 @@ public class Packet05 {
     }
 
     public static ArrayList interpretaP(byte[] pacchetto) {
-        byte[] sourceAliasByteOp = new byte[4+pacchetto.length];
+        byte[] sourceAliasByteOp = new byte[32];
 
         int i = 0;
         for (byte b : pacchetto) {
@@ -50,7 +49,6 @@ public class Packet05 {
                 sourceAliasByteOp[i++] = b;
             }
         }
-
         byte[] sourceAliasByte = Arrays.copyOfRange(sourceAliasByteOp, 1, sourceAliasByteOp.length);
         byte[] messageByte = Arrays.copyOfRange(pacchetto, i++, pacchetto.length - 1);
 
