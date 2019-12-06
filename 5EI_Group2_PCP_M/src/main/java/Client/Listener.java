@@ -30,9 +30,7 @@ public class Listener extends Thread {
 
     @Override
     public void run() {
-
         try {
-
             while (true) {
                 byte[] b = new byte[2048];
                 connection.getIs().read(b);
