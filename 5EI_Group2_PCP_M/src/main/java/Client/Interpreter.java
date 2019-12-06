@@ -53,8 +53,7 @@ public class Interpreter extends Thread {
                 m.interpretaP(packet);
 
             case ("51"):
-                Packet51 l = new Packet51();
-                ArrayList lista = l.interpretaP(packet);
+                ArrayList lista = Packet51.interpretaP(packet);
                 JList jList1 = this.mex.getjList1();
                 int pos = 0;
                 for (Object alias : lista) {

@@ -93,6 +93,8 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CONNETTITI alla Potato Chat!");
 
+        jTextField2.setEditable(false);
+        jTextField2.setText("general");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -173,22 +175,20 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
+
         String alias = jTextField1.getText();
         String topic = jTextField2.getText();
         this.alias = alias;
         try {
             Connection connection = new Connection("127.0.0.1");
-            
-            connection.connect(alias,topic);
-            
+
+            connection.connect(alias, topic);
+
             Messaggistica mex = new Messaggistica(connection, this);
             Listener listener = new Listener(connection, mex);
             listener.start();
-           
-            
 
-            mex.setSize(730, 530);
+            mex.setSize(730, 600);
             mex.setVisible(true);
             this.setVisible(false);
         } catch (IOException ex) {
@@ -226,8 +226,7 @@ public class Login extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
-            public void run() 
-            {
+            public void run() {
                 Frame frame = new Login();
                 frame.setVisible(true);
             }
