@@ -232,6 +232,7 @@ public class Messaggistica extends javax.swing.JFrame {
         String text = jTextField1.getText();
         byte[] pk = Packet05.createP(Packet20.getID(), text);
         try {
+            System.out.println("Sto inviando: "+pk.toString());
             connection.send(pk);
             this.jTextArea1.setText(jTextArea1.getText() + "\n" + Login.alias.toString() + ": " + text);
             this.jTextField1.setText("");

@@ -22,7 +22,6 @@ public class Listener extends Thread {
 
     private Connection connection;
     private Messaggistica mex;
-    
 
     public Listener(Connection connection, Messaggistica mex) {
         this.connection = connection;
@@ -32,19 +31,14 @@ public class Listener extends Thread {
     @Override
     public void run() {
 
-        try {            
-           
+        try {
+
             while (true) {
                 byte[] b = new byte[2048];
                 connection.getIs().read(b);
-                
                 Interpreter i = new Interpreter(b, mex);
- 
                 System.out.println("thread creato");
-                
                 i.start();
-
-                
             }
         } catch (IOException ex) {
             Logger.getLogger(Listener.class.getName()).log(Level.SEVERE, null, ex);
