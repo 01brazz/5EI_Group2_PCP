@@ -45,8 +45,8 @@ public class Interpreter extends Thread {
                 a.interpretaP(packet);
 
             case ("05"):
-                Packet05 u = new Packet05();
-                u.interpretaP(packet);
+                ArrayList<String> dati = Packet05.interpretaP(packet);
+                mex.getjTextArea1().setText(mex.getjTextArea1().getText() + "\n" + dati.get(0) + ": " + dati.get(1));
 
             case ("01"):
                 Packet05 m = new Packet05();

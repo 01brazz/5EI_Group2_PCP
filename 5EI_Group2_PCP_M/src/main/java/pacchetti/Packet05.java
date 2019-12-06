@@ -11,6 +11,7 @@
  */
 package pacchetti;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.HashMap;
@@ -38,7 +39,7 @@ public class Packet05 {
         return packet;
     }
 
-    public static void interpretaP(byte[] pacchetto) {
+    public static ArrayList interpretaP(byte[] pacchetto) {
         byte[] sourceAliasByteOp = new byte[2048];
 
         int i = 0;
@@ -55,5 +56,9 @@ public class Packet05 {
 
         String sourceAlias = Base64.getEncoder().encodeToString(sourceAliasByte);
         String message = Base64.getEncoder().encodeToString(messageByte);
+        ArrayList<String> dati = new ArrayList();
+        dati.add(sourceAlias);
+        dati.add(message);
+        return dati;
     }
 }
