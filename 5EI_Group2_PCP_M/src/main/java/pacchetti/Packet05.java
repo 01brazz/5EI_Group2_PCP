@@ -40,7 +40,7 @@ public class Packet05 {
     }
 
     public static ArrayList interpretaP(byte[] pacchetto) {
-        byte[] sourceAliasByteOp = new byte[2048];
+        byte[] sourceAliasByteOp = new byte[4+pacchetto.length];
 
         int i = 0;
         for (byte b : pacchetto) {
