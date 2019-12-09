@@ -39,18 +39,22 @@ public class Interpreter extends Thread{
             case ("20"):
                 System.out.println("dio");
                 Packet20.interpretaP(packet, Login.alias);
+                break;
 
             case ("11"):
                 Packet11 a = new Packet11();
                 a.interpretaP(packet);
+                break;
 
             case ("5"):
                 ArrayList<String> dati = Packet05.interpretaP(packet);
                 mex.getjTextArea1().setText(mex.getjTextArea1().getText() + "\n" + dati.get(0) + ": " + dati.get(1));
+                break;
 
             case ("01"):
                 ArrayList<String> data = Packet01.interpretaP(packet);
-               
+                mex.getjTextArea1().setText(mex.getjTextArea1().getText() + "\n" + data.get(0) + ": " + data.get(1));
+                break;
 
             case ("51"):
                 ArrayList lista = Packet51.interpretaP(packet);
@@ -59,10 +63,12 @@ public class Interpreter extends Thread{
                 for (Object alias : lista) {
                     jList1.add((Component) alias, pos++);
                 }
+                break;
 
             case ("255"):
                 Packet255 e = new Packet255();
                 e.interpretaP(packet);
+                break;
         }
     }
 }
