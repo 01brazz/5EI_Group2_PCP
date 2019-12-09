@@ -23,7 +23,7 @@ public class Packet01 {
     public static byte[] createP(byte[] id, String Alias, String Message) {
         byte[] UserToUser = new byte[2048];
         int i = 0;
-        UserToUser[i] = 01;
+        UserToUser[i++] = 01;
         for (byte b : id) {
             UserToUser[i++] = b;
         }
