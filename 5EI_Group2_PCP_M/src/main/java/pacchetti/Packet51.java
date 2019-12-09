@@ -36,10 +36,11 @@ public class Packet51 {
         byte[] List = Arrays.copyOfRange(pacchetto, 3, pacchetto.length - 1);
         
         Gson gson = new Gson();
-        String User = Base64.getEncoder().encodeToString(List);
-
-        ArrayList list = gson.fromJson(User, ArrayList.class);
+        String user = new String(List);
         
+
+        ArrayList list = gson.fromJson(user, ArrayList.class);
+        System.out.println(list);
         return list;
     }
 }

@@ -63,6 +63,7 @@ public class Interpreter extends Thread{
                 for (Object alias : lista) {
                     jList1.add((Component) alias, pos++);
                 }
+                System.out.println(lista);
                 break;
 
             case ("255"):
