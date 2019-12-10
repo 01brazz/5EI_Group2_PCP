@@ -28,16 +28,16 @@ import repository.Repository;
  */
 public class Packet51 {
 
-
     public static ArrayList interpretaP(byte[] pacchetto) {
 
         byte tipo = pacchetto[1];
         byte list_length = pacchetto[2];
+
         byte[] List = Arrays.copyOfRange(pacchetto, 3, pacchetto.length);
         
+
         Gson gson = new Gson();
         String user = new String(List);
-        
 
         ArrayList list = gson.fromJson(user, ArrayList.class);
         System.out.println(list);
