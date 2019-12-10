@@ -23,27 +23,12 @@ public class Connection {
     private int port = 53101;
     private DataInputStream is;
     private BufferedOutputStream os;
+    private String dest = null;
 
     public Connection(String addr) throws UnknownHostException {
         this.ip = InetAddress.getByName(addr);
     }
 
-    public DataInputStream getIs() {
-        return is;
-    }
-
-    public void setIs(DataInputStream is) {
-        this.is = is;
-    }
-
-    public BufferedOutputStream getOs() {
-        return os;
-    }
-
-    public void setOs(BufferedOutputStream os) {
-        this.os = os;
-    }
-    
     public Socket getSocket() {
         return socket;
     }
@@ -68,15 +53,39 @@ public class Connection {
         this.port = port;
     }
 
+    public DataInputStream getIs() {
+        return is;
+    }
+
+    public void setIs(DataInputStream is) {
+        this.is = is;
+    }
+
+    public BufferedOutputStream getOs() {
+        return os;
+    }
+
+    public void setOs(BufferedOutputStream os) {
+        this.os = os;
+    }
+
+    public String getDest() {
+        return dest;
+    }
+
+    public void setDest(String dest) {
+        this.dest = dest;
+    }
+
     public void connect(String alias, String topic) throws IOException {
         this.socket = new Socket(ip, port);
         byte[] to_send = Packet10.createP(alias, topic);
-        
+
         this.is = new DataInputStream(socket.getInputStream());
         this.os = new BufferedOutputStream(socket.getOutputStream());
-        
+
         // invia la registrazione
-        this.send(to_send);        
+        this.send(to_send);
     }
 
     public void send(byte[] packet) throws IOException {

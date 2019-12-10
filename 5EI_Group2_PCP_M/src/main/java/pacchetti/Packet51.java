@@ -19,7 +19,9 @@ package pacchetti;
 import java.util.ArrayList;
 import java.util.Arrays;
 import com.google.gson.*;
-import repository.Repository;
+import Graphics.Messaggistica;
+import java.awt.Component;
+import javax.swing.JList;
 
 /**
  *
@@ -27,25 +29,24 @@ import repository.Repository;
  */
 public class Packet51 {
 
-    public static ArrayList interpretaP(byte[] pacchetto) {
+    public static ArrayList interpretaP(byte[] pacchetto, Messaggistica mex) {
 
         byte tipo = pacchetto[1];
         byte list_length = pacchetto[2];
         int guardia = 0;
         int finelista = 0;
         String type = Byte.toString(tipo);
+        ArrayList list = new ArrayList();
 
         switch (type) {
             case ("0"):
                 for (byte b : pacchetto) {
                     if (!(guardia == 2)) {
-
                         if (b == 0) {
                             guardia++;
                             finelista++;
                         } else {
                             finelista++;
-
                         }
                     } else {
                         break;
@@ -53,26 +54,43 @@ public class Packet51 {
                 }
                 break;
 
-                
             case ("1"):
-                
+                for (byte b : pacchetto) {
+                    if (b == 0) {
+                        break;
+                    } else {
+                        finelista++;
+                    }
+                }
+//                byte[] List1 = Arrays.copyOfRange(pacchetto, 3, finelista - 1);
+//                System.out.println(Arrays.toString(List1));
+//                String user1 = new String(List1);
+//                Gson gson1 = new Gson();
+//                System.out.println(user1);
+//                list = gson1.fromJson(user1, ArrayList.class);
+//                JList jList1 = mex.getjList1();
+//                int pos = 0;
+//                for (Object alias : list) {
+//                    jList1.addItem(alias);
+//                }
                 break;
 
             case ("2"):
+                for (byte b : pacchetto) {
+                    if (b == 0) {
+                        break;
+                    } else {
+                        finelista++;
+                    }
+                }
+                byte[] List2 = Arrays.copyOfRange(pacchetto, 3, finelista - 1);
+                System.out.println(Arrays.toString(List2));
+                String user2 = new String(List2);
+                Gson gson2 = new Gson();
+                System.out.println(user2);
+                list = gson2.fromJson(user2, ArrayList.class);
                 break;
-               
-        
         }
-        
-        byte[] List = Arrays.copyOfRange(pacchetto, 3, finelista - 1);
-                System.out.println(Arrays.toString(List));
-                String user = new String(List);
-
-                Gson gson = new Gson();
-
-                System.out.println(user);
-                ArrayList list = gson.fromJson(user, ArrayList.class);
-
-                return list;
-        }
+        return list;
     }
+}
