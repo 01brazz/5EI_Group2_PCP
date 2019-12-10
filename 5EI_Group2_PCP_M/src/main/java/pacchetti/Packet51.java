@@ -21,6 +21,7 @@ import java.util.Arrays;
 import com.google.gson.*;
 import Graphics.Messaggistica;
 import java.awt.Component;
+import javax.swing.JComboBox;
 import javax.swing.JList;
 
 /**
@@ -52,6 +53,17 @@ public class Packet51 {
                         break;
                     }
                 }
+                byte[] List = Arrays.copyOfRange(pacchetto, 3, finelista - 1);
+                System.out.println(Arrays.toString(List));
+                String user = new String(List);
+                Gson gson = new Gson();
+                System.out.println(user);
+                list = gson.fromJson(user, ArrayList.class);
+                JComboBox jComboBox = mex.getjComboBox2();
+                jComboBox.removeAllItems();
+                for (Object alias : list) {
+                    jComboBox.addItem(alias);
+                }
                 break;
 
             case ("1"):
@@ -62,17 +74,16 @@ public class Packet51 {
                         finelista++;
                     }
                 }
-//                byte[] List1 = Arrays.copyOfRange(pacchetto, 3, finelista - 1);
-//                System.out.println(Arrays.toString(List1));
-//                String user1 = new String(List1);
-//                Gson gson1 = new Gson();
-//                System.out.println(user1);
-//                list = gson1.fromJson(user1, ArrayList.class);
-//                JList jList1 = mex.getjList1();
-//                int pos = 0;
-//                for (Object alias : list) {
-//                    jList1.addItem(alias);
-//                }
+                byte[] List1 = Arrays.copyOfRange(pacchetto, 3, finelista - 1);
+                System.out.println(Arrays.toString(List1));
+                String user1 = new String(List1);
+                Gson gson1 = new Gson();
+                System.out.println(user1);
+                list = gson1.fromJson(user1, ArrayList.class);
+                JComboBox jComboBox1 = mex.getjComboBox2();
+                for (Object alias : list) {
+                    jComboBox1.addItem(alias);
+                }
                 break;
 
             case ("2"):
@@ -89,6 +100,10 @@ public class Packet51 {
                 Gson gson2 = new Gson();
                 System.out.println(user2);
                 list = gson2.fromJson(user2, ArrayList.class);
+                JComboBox jComboBox2 = mex.getjComboBox2();
+                for (Object alias : list) {
+                    jComboBox2.removeItem(alias);
+                }
                 break;
         }
         return list;
