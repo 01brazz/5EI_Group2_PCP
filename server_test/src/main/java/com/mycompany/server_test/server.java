@@ -23,7 +23,7 @@ Logger.getLogger("").getHandlers()[0].setLevel(Level.FINEST);
 // changes global configuration logging level
 Logger.getGlobal().setLevel(Level.FINEST);
         
-        InetAddress address = InetAddress.getByName("172.16.7.156");
+        InetAddress address = InetAddress.getByName("127.0.0.1");
         PCPServer server = new PCPServer(address);
         server.acceptAndServe();
     }
