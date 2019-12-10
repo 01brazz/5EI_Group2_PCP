@@ -19,7 +19,6 @@ package pacchetti;
 import java.util.ArrayList;
 import java.util.Arrays;
 import com.google.gson.*;
-import java.util.Base64;
 import repository.Repository;
 
 /**
@@ -32,15 +31,34 @@ public class Packet51 {
 
         byte tipo = pacchetto[1];
         byte list_length = pacchetto[2];
-
-        byte[] List = Arrays.copyOfRange(pacchetto, 3, pacchetto.length);
+        int guardia = 0;
+        int finelista = 0;
+        for(byte b : pacchetto){
+            if(!(guardia == 2)){
+                
+            
+                if (b==0){
+                    guardia++;
+                    finelista++;
+                }else
+                {
+                    finelista++;
+                    
+                }
+            }else{
+                break;
+            }
+        }
         
-
-        Gson gson = new Gson();
+        byte[] List = Arrays.copyOfRange(pacchetto, 3, finelista-1  );
+        System.out.println(Arrays.toString(List));
         String user = new String(List);
 
+        Gson gson = new Gson();
+        
+        System.out.println(user);
         ArrayList list = gson.fromJson(user, ArrayList.class);
-        System.out.println(list);
+        
         return list;
     }
 }
