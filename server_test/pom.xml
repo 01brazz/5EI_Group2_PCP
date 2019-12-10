@@ -20,7 +20,7 @@
         <dependency>
             <groupId>com.github.JacopoWolf</groupId>
             <artifactId>PotatoChatProtocol</artifactId>
-            <version>Min.b.4</version>
+            <version>Min.b.5</version>
         </dependency>
     </dependencies>
 </project>
