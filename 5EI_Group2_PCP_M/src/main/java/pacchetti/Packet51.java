@@ -74,7 +74,7 @@ public class Packet51 {
                         finelista++;
                     }
                 }
-                byte[] List1 = Arrays.copyOfRange(pacchetto, 3, finelista - 1);
+                byte[] List1 = Arrays.copyOfRange(pacchetto, 3, finelista);
                 System.out.println(Arrays.toString(List1));
                 String user1 = new String(List1);
                 Gson gson1 = new Gson();
@@ -94,7 +94,7 @@ public class Packet51 {
                         finelista++;
                     }
                 }
-                byte[] List2 = Arrays.copyOfRange(pacchetto, 3, finelista - 1);
+                byte[] List2 = Arrays.copyOfRange(pacchetto, 3, finelista );
                 System.out.println(Arrays.toString(List2));
                 String user2 = new String(List2);
                 Gson gson2 = new Gson();
