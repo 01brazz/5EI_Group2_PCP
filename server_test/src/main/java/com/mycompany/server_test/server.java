@@ -16,7 +16,7 @@ import java.net.InetAddress;
 public class server {
 
     public static void main(String[] args) throws IOException {
-        InetAddress address = InetAddress.getByName("127.0.0.1");
+        InetAddress address = InetAddress.getByName("172.16.7.156");
         PCPServer server = new PCPServer(address);
         server.acceptAndServe();
     }

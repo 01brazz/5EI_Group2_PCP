@@ -33,7 +33,7 @@ public class Packet51 {
 
         byte tipo = pacchetto[1];
         byte list_length = pacchetto[2];
-        byte[] List = Arrays.copyOfRange(pacchetto, 3, pacchetto.length - 1);
+        byte[] List = Arrays.copyOfRange(pacchetto, 3, pacchetto.length);
         
         Gson gson = new Gson();
         String user = new String(List);
