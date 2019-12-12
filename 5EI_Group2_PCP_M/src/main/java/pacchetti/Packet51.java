@@ -40,7 +40,7 @@ public class Packet51 {
         ArrayList list = new ArrayList();
 
         switch (type) {
-            case ("0"):
+            default:
                 for (byte b : pacchetto) {
                     if (!(guardia == 2)) {
                         if (b == 0) {
