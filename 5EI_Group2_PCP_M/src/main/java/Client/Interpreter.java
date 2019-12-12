@@ -18,7 +18,7 @@ import pacchetti.*;
  *
  * @author 5ei
  */
-public class Interpreter extends Thread{
+public class Interpreter extends Thread {
 
     private byte[] packet;
     private Messaggistica mex;
@@ -31,8 +31,8 @@ public class Interpreter extends Thread{
     @Override
     public void run() {
 
-        Byte opcode= packet[0];
-        
+        Byte opcode = packet[0];
+
         String op = Byte.toString(opcode);
         System.out.println(op);
         switch (op) {
@@ -53,13 +53,11 @@ public class Interpreter extends Thread{
 
             case ("1"):
                 ArrayList<String> data = Packet01.interpretaP(packet);
-                mex.getjTextArea1().setText(mex.getjTextArea1().getText() + "\n" + data.get(0) + ": " + data.get(1));
+                mex.getjTextArea2().setText(mex.getjTextArea2().getText() + "\n" + data.get(0) + ": " + data.get(1));
                 break;
 
             case ("51"):
                 ArrayList lista = Packet51.interpretaP(packet, this.mex);
-                
-                
                 System.out.println(lista);
                 break;
 
