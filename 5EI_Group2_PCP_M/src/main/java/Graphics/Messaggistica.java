@@ -7,7 +7,6 @@ package Graphics;
 
 import Client.Connection;
 import Client.Listener;
-import repository.Repository;
 import java.awt.Frame;
 import java.io.IOException;
 import java.util.logging.Level;

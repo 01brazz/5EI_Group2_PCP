@@ -11,7 +11,6 @@ import java.io.*;
 import java.util.*;
 import javax.swing.JList;
 import javax.swing.JPanel;
-import repository.Repository;
 import pacchetti.*;
 
 /**
