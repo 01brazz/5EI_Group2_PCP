@@ -52,7 +52,7 @@ public class Interpreter extends Thread {
 
             case ("1"):
                 ArrayList<String> data = Packet01.interpretaP(packet);
-                mex.getjComboBox2().setSelectedItem(packet[0]);
+                mex.getjComboBox2().setSelectedItem(data.get(0));
                 mex.getjTextArea2().setText(mex.getjTextArea2().getText() + "\n" + data.get(0) + ": " + data.get(1));
                 break;
 
