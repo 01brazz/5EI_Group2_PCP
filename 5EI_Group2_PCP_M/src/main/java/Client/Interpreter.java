@@ -66,8 +66,8 @@ public class Interpreter extends Thread {
                 break;
 
             case ("255"):
-                Packet255 e = new Packet255();
-                e.interpretaP(packet);
+                String e = new Packet255().interpretaP(packet);
+                System.out.println(e);
                 break;
         }
     }
