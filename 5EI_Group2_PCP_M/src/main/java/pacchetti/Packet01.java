@@ -21,7 +21,7 @@ public class Packet01 {
 
     //metodo per creare pacchetto
     public static byte[] createP(byte[] id, String Alias, String Message) {
-        byte[] UserToUser = new byte[4 + Message.length()];
+        byte[] UserToUser = new byte[5 + Alias.length() + Message.length()];
         int i = 0;
         UserToUser[i++] = 01;
         for (byte b : id) {

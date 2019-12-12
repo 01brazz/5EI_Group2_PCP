@@ -243,7 +243,7 @@ public class Messaggistica extends javax.swing.JFrame {
             try {
                 System.out.println("Sto inviando: " + pk.toString());
                 connection.send(pk);
-                this.jTextArea2.setText(jTextArea1.getText() + "\n" + this.connection.getDest().toString() + ": " + text);
+                this.jTextArea2.setText(jTextArea2.getText() + "\n" + Login.alias.toString() + ": " + text);
                 this.jTextField1.setText("");
             } catch (IOException ex) {
                 Logger.getLogger(Messaggistica.class.getName()).log(Level.SEVERE, null, ex);
