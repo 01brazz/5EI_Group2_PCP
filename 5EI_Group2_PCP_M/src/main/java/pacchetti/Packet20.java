@@ -24,7 +24,5 @@ public class Packet20 {
         byte[] AliasC = Arrays.copyOfRange(pacchetto, 3, pacchetto.length - 1);
 
         Packet20.ID = Arrays.copyOfRange(pacchetto, 1, 3);
-        System.out.println("va");
-        
     }
 }

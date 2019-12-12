@@ -37,7 +37,6 @@ public class Interpreter extends Thread {
         System.out.println(op);
         switch (op) {
             case ("20"):
-                System.out.println("dio");
                 Packet20.interpretaP(packet, Login.alias);
                 break;
 
@@ -53,6 +52,7 @@ public class Interpreter extends Thread {
 
             case ("1"):
                 ArrayList<String> data = Packet01.interpretaP(packet);
+                mex.getjComboBox2().setSelectedItem(packet[0]);
                 mex.getjTextArea2().setText(mex.getjTextArea2().getText() + "\n" + data.get(0) + ": " + data.get(1));
                 break;
 

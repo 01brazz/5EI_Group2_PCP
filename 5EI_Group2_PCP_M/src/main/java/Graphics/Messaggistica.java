@@ -121,6 +121,7 @@ public class Messaggistica extends javax.swing.JFrame {
             }
         });
 
+        jTextArea2.setEditable(false);
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jTextArea2.setAutoscrolls(false);

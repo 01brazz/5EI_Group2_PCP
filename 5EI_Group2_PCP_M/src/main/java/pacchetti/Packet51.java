@@ -16,6 +16,7 @@
  */
 package pacchetti;
 
+import Graphics.Login;
 import java.util.ArrayList;
 import java.util.Arrays;
 import com.google.gson.*;
@@ -64,6 +65,7 @@ public class Packet51 {
                 for (Object alias : list) {
                     jComboBox.addItem(alias);
                 }
+                jComboBox.removeItem(Login.alias);
                 break;
 
             case ("1"):
