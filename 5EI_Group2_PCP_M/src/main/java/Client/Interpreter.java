@@ -53,7 +53,11 @@ public class Interpreter extends Thread {
             case ("1"):
                 ArrayList<String> data = Packet01.interpretaP(packet);
                 mex.getjComboBox2().setSelectedItem(data.get(0));
-                mex.getjTextArea2().setText(mex.getjTextArea2().getText() + "\n" + data.get(0) + ": " + data.get(1));
+                if (data.get(0) == mex.getjComboBox2().getSelectedItem()) {
+                    mex.getjTextArea2().setText(mex.getjTextArea2().getText() + "\n" + data.get(0) + ": " + data.get(1));
+                } else {
+                    mex.getjTextArea2().setText("" + data.get(0) + ": " + data.get(1));
+                }
                 break;
 
             case ("51"):
