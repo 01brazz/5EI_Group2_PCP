@@ -1,0 +1,14 @@
+Brazz:
+- 7 Test Case Specification
+- 4 Project Success Criteria
+Pippo:
+- 8 User Guide
+- 1 Release Plan
+Degio:
+- 6 Test Plan
+- 5 Architecture, Design and Coding Standards
+Beltra:
+- 9 System Documentation
+Brusetti:
+- 3 Iteration Plan
+- 2 Memo of Understanding
