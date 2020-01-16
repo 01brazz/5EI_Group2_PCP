@@ -1,6 +1,6 @@
 site_name: 2020_5eI_Team2
 nav:
-    
+    - 'Architecture and Design': 'Architecture and Design.md'
     
 theme:
     name: readthedocs
