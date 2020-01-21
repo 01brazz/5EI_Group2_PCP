@@ -2,6 +2,7 @@ site_name: 2020_5eI_Team2
 nav:
     - 'Architecture and Design': 'Architecture and Design.md'
     - 'Project Success Criteria': 'Project_Success_Criteria.md'
+    - 'System Requirements documentation': 'System Requirements documentation.md'
     
 theme:
     name: readthedocs
