@@ -1,8 +1,10 @@
 # Success Criteria for Potato Chat Project
 
+
+
 The Potato Chat project will be considered a success if . . .
 
-#### A fully functional app is delivered on or before December 6th
+##### A fully functional app is delivered on or before December 6th
 
 
 The system shall be delivered in a state that is ready to be used in its intended production environment for its intended purpose. The users will be able to use the app since they lauch it. We will consider both of these goals met if the users who plan to use the system during its test period fill out the attached Acceptance Test User Survey and:
@@ -61,11 +63,13 @@ David Brazzarola, Project Manager
 
 Andrea Beltrami, Customer Representative
 
+
+
 ## Potato Chat Acceptance Test User Survey
 
 1. Is the system installed and functioning adequately such that you can begin using it in its production environment for its intended purpose?
 
- No Yes Yes, with some reservations
+   No 						Yes 					Yes, with some reservations
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -95,4 +99,4 @@ Description:\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\__
