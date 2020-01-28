@@ -6,8 +6,13 @@ nav:
     - 'Project Charter': 'Project Charter.md'
     - 'Test Plan': 'Test_Plan.md'
     - 'Project Model Canvas': 'Project_Model_Canvas.pdf'
-    - 'Business Model Canvas Poster': 'business_model_canvas_poster.pdf'
-    
+    - 'Business Model Canvas': 'business_model_canvas_poster.pdf'
+    - 'Iteration Plan' : 'Iteration Plan.md'
+    - 'Memo of Understanding': 'Memo of Understanding.md'
+    - 'Relase Plan': 'Relase Plan.md'
+    - 'Test Case Specification': 'Test Case Specification.md'
+    - 'User Guide': 'User Guide.md'
+
 theme:
     name: readthedocs
 
