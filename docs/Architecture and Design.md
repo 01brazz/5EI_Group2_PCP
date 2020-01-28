@@ -6,50 +6,6 @@
 
 
 
-Table of Contents
-
-1.0 Introduction………………………………………………………………  2
-
-2.0 High Level Hierarchy…………………………………………………… 2
-
-2.1 Hierarchy Description………………………………………… 2
-
-3.0 Components Classification………………………………………………  2
-
-3.1 Presentation Layer………………………………………………. 2
-
-3.2 Controller Layer…………………………………………………. 2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # 1.0 Introduction
 
 This documentation is intended to illustrate our project.
