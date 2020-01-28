@@ -1,24 +1,6 @@
-# Test Case Specification
-
-# For
-
-# Team 3
+# Test Case Specification For Team 3
 
 January 14, 2020
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -28,17 +10,9 @@ David Brazzarola
 
 
 
-# Table of Contents
-
-1 Introduction        4
-
-2 Test Cases: iOS Application        4
-
-3 Test Cases: Proxy Server        6
 
 
-
-Revision History
+## Revision History
 
 | Version | Date | Name | Description |
 | --- | --- | --- | --- |
@@ -47,11 +21,11 @@ Revision History
 
 
 
-# 1Introduction
+## Introduction
 
 This document provides the test cases to be carried out for the Potato Chat Application.  Each item to be tested is represented by an individual test case.  Each case details the input and expected outputs.
 
-# 2Test Cases: Local Server
+## Test Cases: Local Server
 
 | Test ID | 2.1 |
 | --- | --- |
@@ -75,7 +49,11 @@ This document provides the test cases to be carried out for the Potato Chat Appl
 | Test Actions | 1. Start Potato Chat application2. Exchange messages with the server |
 | Expected Results | Everything works correctly |
 
-# 4Test Cases: Remote Application
+
+
+
+
+## Test Cases: Remote Application
 
 | Test ID | 3.1 |
 | --- | --- |
