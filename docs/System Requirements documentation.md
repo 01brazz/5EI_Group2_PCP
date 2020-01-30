@@ -1,6 +1,6 @@
 # System Documentation
 
-**Team 3**
+**Team 2**
 
 January, 2020
 

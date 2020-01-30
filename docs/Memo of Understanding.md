@@ -2,7 +2,7 @@
 
 ### Purpose
 
-The purpose of this Memorandum of Understanding (MOU) is to serve as a written understanding between Marconi&#39;s Team 3 Commission and the Marconi&#39;s Teachers.  This MOU documents the responsibilities of the principal organizations involved in the deployment of a client-server based Chat System ( Potato Chat Protocol).
+The purpose of this Memorandum of Understanding (MOU) is to serve as a written understanding between Marconi&#39;s Team 2 Commission and the Marconi&#39;s Teachers.  This MOU documents the responsibilities of the principal organizations involved in the deployment of a client-server based Chat System ( Potato Chat Protocol).
 
 ### Objectives, Scope, and Major Activities
 
@@ -14,7 +14,7 @@ The purpose of this Memorandum of Understanding (MOU) is to serve as a written u
 
 ### Responsibilities
 
-- **Marconi&#39;s Team 3**
+- **Marconi&#39;s Team 2**
 
 1. Seek support for, program for, budget, and provide the funding necessary for successful integration of the system, including all necessary information assurance, data and computer security requirements;
 2. Ensure that appropriate ITC program managers and the Customer Service Representative are kept appraised of any planned or proposed system modifications so that adequate time for consideration can be offered to the system;
