@@ -2,7 +2,7 @@ site_name: 2020_5eI_Team2
 nav:
     - 'Architecture and Design': 'Architecture and Design.md'
     - 'Project Success Criteria': 'Project_Success_Criteria.md'
-    - 'System Requirements documentation': 'System Requirements documentation.md'
+    - 'System Requirements Documentation': 'System Requirements documentation.md'
     - 'Project Charter': 'Project Charter.md'
     - 'Test Plan': 'Test_Plan.md'
     - 'Project Model Canvas': 'Project_Model_Canvas.pdf'
