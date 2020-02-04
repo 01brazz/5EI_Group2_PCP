@@ -12,8 +12,8 @@ nav:
     - 'Relase Plan': 'Relase Plan.md'
     - 'Test Case Specification': 'Test Case Specification.md'
     - 'User Guide': 'User Guide.md'
-    - 'Sortware Requirements Specification': 'Sortware Requirements Specification.md'
-    - 'Software Project Management Plan': 'Software Project Management Plan.md'
+    - 'Software Requirements Specification': 'Software Requirements Specification.md'
+    - 'Software Project Management Plan': 'Software Project Manegement Plan.md'
 
 theme:
     name: readthedocs
