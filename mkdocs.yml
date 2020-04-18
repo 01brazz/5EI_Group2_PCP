@@ -1,19 +1,31 @@
 site_name: 2020_5eI_Team2
 nav:
     - 'Architecture and Design': 'Architecture and Design.md'
+    - 'Architecture and Design (PDF)': 'Architecture and Design (PDF).pdf'
     - 'Project Success Criteria': 'Project_Success_Criteria.md'
+    - 'Project Success Criteria (PDF)': 'Project_Success_Criteria (PDF).pdf'
     - 'System Requirements Documentation': 'System Requirements documentation.md'
+    - 'System Requirements Documentation (PDF)': 'System Requirements documentation (PDF).pdf'
     - 'Project Charter': 'Project Charter.md'
+    - 'Project Charter (PDF)': 'Project Charter (PDF).pdf'
     - 'Test Plan': 'Test_Plan.md'
+    - 'Test Plan (PDF)': 'Test_Plan (PDF).pdf'
     - 'Project Model Canvas': 'Project_Model_Canvas.pdf'
     - 'Business Model Canvas': 'business_model_canvas_poster.pdf'
     - 'Iteration Plan': 'Iteration Plan.md'
+    - 'Iteration Plan (PDF)': 'Iteration Plan (PDF).pdf'
     - 'Memo of Understanding': 'Memo of Understanding.md'
+    - 'Memo of Understanding (PDF)': 'Memo of Understanding (PDF).pdf'
     - 'Relase Plan': 'Relase Plan.md'
+    - 'Relase Plan (PDF)': 'Relase Plan (PDF).pdf'
     - 'Test Case Specification': 'Test Case Specification.md'
+    - 'Test Case Specification (PDF)': 'Test Case Specification (PDF).pdf'
     - 'User Guide': 'User Guide.md'
+    - 'User Guide (PDF)': 'User Guide (PDF).pdf'
     - 'Software Requirements Specification': 'Software Requirements Specification.md'
+    - 'Software Requirements Specification (PDF)': 'Software Requirements Specification (PDF).pdf'
     - 'Software Project Management Plan': 'Software Project Manegement Plan.md'
+    - 'Software Project Management Plan (PDF)': 'Software Project Manegement Plan (PDF).pdf'
 
 theme:
     name: readthedocs
